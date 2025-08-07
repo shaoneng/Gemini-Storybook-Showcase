@@ -3,8 +3,6 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// 告诉Cloudflare使用Edge Runtime
-export const runtime = 'experimental-edge';
 
 const SectionTitle = ({ children }) => <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">{children}</h2>;
 const FeatureCard = ({ title, description }) => (
