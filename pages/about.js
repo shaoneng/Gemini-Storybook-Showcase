@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-
 const SectionTitle = ({ children }) => <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">{children}</h2>;
 const FeatureCard = ({ title, description }) => (
   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">

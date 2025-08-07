@@ -6,8 +6,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
 import fs from 'fs/promises';
 
-
-
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
 
