@@ -1,0 +1,7 @@
+# 文件路径: /wrangler.toml
+
+name = "gemini-storybook-showcase"
+compatibility_date = "2024-04-03"
+
+[pages]
+compatibility_flags = ["nodejs_compat"]
