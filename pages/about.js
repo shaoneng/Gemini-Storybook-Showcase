@@ -3,6 +3,9 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+// 告诉Cloudflare使用Edge Runtime
+export const runtime = 'edge';
+
 const SectionTitle = ({ children }) => <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">{children}</h2>;
 const FeatureCard = ({ title, description }) => (
   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
@@ -30,8 +33,7 @@ const AboutPage = () => {
             </a>
           </div>
         </div>
-        {/* ... 其他部分保持不变 ... */}
-         <div className="mb-12">
+        <div className="mb-12">
           <SectionTitle>{t('about:how_it_works_title')}</SectionTitle>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>

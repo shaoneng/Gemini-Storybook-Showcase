@@ -6,6 +6,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
 import fs from 'fs/promises';
 
+// 告诉Cloudflare使用Edge Runtime
+export const runtime = 'edge';
+
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
 
@@ -31,7 +34,6 @@ const HomePage = ({ stories }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  // 使用 fs 和 path 读取文件，确保在构建时能找到
   const filePath = path.join(process.cwd(), 'data', 'stories.json');
   const jsonData = await fs.readFile(filePath, 'utf-8');
   const storiesData = JSON.parse(jsonData);
