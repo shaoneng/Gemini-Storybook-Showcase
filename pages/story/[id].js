@@ -8,9 +8,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import path from 'path';
 import fs from 'fs/promises';
 
-// 告诉Cloudflare使用Edge Runtime
-export const runtime = 'experimental-edge';
-
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
