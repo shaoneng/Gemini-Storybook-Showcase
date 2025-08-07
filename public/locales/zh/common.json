@@ -1,0 +1,17 @@
+{
+  "site_title": "Gemini 故事集",
+  "meta_description": "探索由Google Gemini Storybook创作的精彩AI故事，发现背后的魔法提示词，分享你的创意作品。",
+  "hero_title": "探索AI的创造力",
+  "hero_subtitle": "一个展示由 Gemini Storybook 生成的精彩故事的社区。发现灵感，分享你的杰作。",
+  "nav_what_is_storybook": "关于 Storybook",
+  "nav_submit_story": "提交你的故事",
+  "footer_home": "主页",
+  "footer_about": "关于 Storybook",
+  "footer_copyright": "一个由AI爱好者创建的社区。",
+  "story_author_prefix": "作者",
+  "story_prompt_title": "魔法提示词 (Prompt)",
+  "story_copy_button": "一键复制",
+  "story_copy_success": "复制成功!",
+  "story_open_button": "在新窗口中打开故事",
+  "anonymous_author": "匿名"
+}

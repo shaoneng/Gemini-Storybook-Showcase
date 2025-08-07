@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": "a-brave-cat-explorer",
+    "title": {
+      "en": "The Brave Cat Explorer",
+      "zh": "勇敢猫咪探险家"
+    },
+    "author": {
+      "en": "AI Storyteller",
+      "zh": "AI小画家"
+    },
+    "coverImageUrl": "/covers/cat-explorer.png",
+    "shareUrl": "https://g.co/gemini/share/f0510158d514",
+    "prompt": {
+      "en": "Create a storybook for a 5-year-old about a brave little cat named Leo who explores a mysterious, glowing forest at night. The style should be vibrant and dreamlike, with friendly-looking creatures. The story should teach a gentle lesson about curiosity and courage.",
+      "zh": "为5岁孩子创作一本图画书，讲述一只名叫里奥的勇敢小猫，在夜晚探索一个神秘发光森林的故事。风格应充满活力和梦幻感，里面的生物看起来都很友好。故事应温和地传达关于好奇心和勇气的课程。"
+    },
+    "submissionDate": "2025-08-07T10:00:00Z"
+  },
+  {
+    "id": "the-robot-who-learned-to-dance",
+    "title": {
+      "en": "The Robot Who Learned to Dance",
+      "zh": "学跳舞的机器人"
+    },
+    "author": {
+      "en": "Creative Engineer",
+      "zh": "创意工程师"
+    },
+    "coverImageUrl": "/covers/dancing-robot.png",
+    "shareUrl": "https://g.co/gemini/share/255509e2d748",
+    "prompt": {
+      "en": "Generate a storybook in a retro-futuristic comic book style. The main character is a clumsy but kind-hearted robot, Unit 734, who wants to learn how to dance to impress his friends at the annual Robot Ball. The story should be funny and heartwarming.",
+      "zh": "以复古未来主义的漫画书风格生成一本故事书。主角是一个笨拙但善良的机器人734号，他想学会跳舞，在年度机器人舞会上给朋友们留下深刻印象。故事应该有趣且温暖人心。"
+    },
+    "submissionDate": "2025-08-06T15:30:00Z"
+  }
+]
