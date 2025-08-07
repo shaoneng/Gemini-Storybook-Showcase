@@ -9,7 +9,7 @@ import path from 'path';
 import fs from 'fs/promises';
 
 // 告诉Cloudflare使用Edge Runtime
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
