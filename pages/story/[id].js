@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import path from 'path';
-import fs from 'fs/promises';
+// 改回直接 import 的方式
+import storiesData from '../../data/stories.json';
 
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
@@ -67,10 +67,6 @@ const StoryPage = ({ story }) => {
 };
 
 export async function getStaticPaths({ locales }) {
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath);
-  const storiesData = JSON.parse(jsonData);
-
   const paths = [];
   storiesData.forEach((story) => {
     for (const locale of locales) {
@@ -81,10 +77,6 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath);
-  const storiesData = JSON.parse(jsonData);
-
   const story = storiesData.find((s) => s.id === params.id);
   return {
     props: {

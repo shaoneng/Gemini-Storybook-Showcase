@@ -3,8 +3,8 @@ import Head from 'next/head';
 import StoryCard from '../components/StoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import path from 'path';
-import fs from 'fs/promises';
+// 改回直接 import 的方式
+import storiesData from '../data/stories.json';
 
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
@@ -31,11 +31,6 @@ const HomePage = ({ stories }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  // 使用 fs 和 path 读取文件，确保在构建时能找到
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath);
-  const storiesData = JSON.parse(jsonData);
-
   const sortedStories = storiesData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
   return {
     props: {
