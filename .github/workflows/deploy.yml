@@ -41,6 +41,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: geministorybook
+
+          projectName: gemini-storybook-showcase
           directory: out
           wranglerVersion: '2'
+
