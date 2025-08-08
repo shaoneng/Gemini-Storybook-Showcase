@@ -5,7 +5,7 @@ type = "javascript"
 
 [build]
 command = "npm run build"
-directory = "out"  # 或者根据你的构建目录设置
+directory = ".next"  # 或者根据你的构建目录设置
 
 [env.production]
 workers_dev = false
