@@ -3,7 +3,7 @@ import Head from 'next/head';
 import StoryCard from '../components/StoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import storiesData from '../data/stories.json';
+import storiesData from '../../data/stories.json';
 
 
 const HomePage = ({ stories }) => {
