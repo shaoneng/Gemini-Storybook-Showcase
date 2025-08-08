@@ -1,14 +1,11 @@
-// 文件路径: /pages/story/[id].js
+// pages/story/[id].js
 import { useRouter } from 'next/router';
-
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import stories from '../../data/stories.json';
 
-const path = require('path');
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
@@ -68,9 +65,8 @@ const StoryPage = ({ story }) => {
 };
 
 export async function getStaticPaths({ locales }) {
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath, 'utf-8');
-  const storiesData = JSON.parse(jsonData);
+  const res = await fetch('https://your-domain.com/api/stories');
+  const storiesData = await res.json();
 
   const paths = [];
   storiesData.forEach((story) => {
@@ -82,9 +78,8 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath, 'utf-8');
-  const storiesData = JSON.parse(jsonData);
+  const res = await fetch('https://your-domain.com/api/stories');
+  const storiesData = await res.json();
 
   const story = storiesData.find((s) => s.id === params.id);
   return {
