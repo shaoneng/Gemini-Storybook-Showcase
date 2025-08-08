@@ -81,10 +81,11 @@ const AboutPage = () => {
   );
 };
 
+// *** 关键修改：当 locale 不存在时，提供默认值 'zh' ***
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale??'en', ['about', 'common'])),
+      ...(await serverSideTranslations(locale ?? 'zh', ['about', 'common'])),
     },
   };
 }
