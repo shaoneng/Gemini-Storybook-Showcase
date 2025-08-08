@@ -3,10 +3,13 @@ import Head from 'next/head';
 import StoryCard from '../components/StoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
 import storiesData from '../data/stories.json';
 
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
+  const router = useRouter();
+  const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
 
   return (
     <>
@@ -30,12 +33,12 @@ const HomePage = ({ stories }) => {
 };
 
 // *** 关键修改：当 locale 不存在时，提供默认值 'zh' ***
-export async function getStaticProps({ locale }) {
+export async function getStaticProps() {
   const sortedStories = storiesData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
   
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common'])),
+      ...(await serverSideTranslations('zh', ['common'])),
       stories: sortedStories,
     },
   };

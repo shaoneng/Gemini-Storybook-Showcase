@@ -9,9 +9,12 @@ const StoryCard = ({ story }) => {
   const { t } = useTranslation('common');
   // 从路径检测语言
   const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
+  
+  // 构建正确的故事链接
+  const storyLink = locale === 'en' ? `/en/story/${story.id}` : `/story/${story.id}`;
 
   return (
-    <Link href={`/story/${story.id}`} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+    <Link href={storyLink} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
       <div className="relative w-full h-56">
         <Image src={story.coverImageUrl} alt={story.title[locale]} layout="fill" objectFit="cover" className="transition-transform duration-500 group-hover:scale-110" />
         <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-colors"></div>

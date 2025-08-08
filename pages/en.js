@@ -1,12 +1,15 @@
-// 英文首页
+// 文件路径: /pages/index.js
 import Head from 'next/head';
-import StoryCard from '../../components/StoryCard';
+import StoryCard from '../components/StoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import storiesData from '../../data/stories.json';
+import { useRouter } from 'next/router';
+import storiesData from '../data/stories.json';
 
-const EnglishHomePage = ({ stories }) => {
+const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
+  const router = useRouter();
+  const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
 
   return (
     <>
@@ -29,6 +32,7 @@ const EnglishHomePage = ({ stories }) => {
   );
 };
 
+// *** 关键修改：当 locale 不存在时，提供默认值 'zh' ***
 export async function getStaticProps() {
   const sortedStories = storiesData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
   
@@ -40,4 +44,4 @@ export async function getStaticProps() {
   };
 }
 
-export default EnglishHomePage;
+export default HomePage;

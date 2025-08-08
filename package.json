@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
+    "verify": "node scripts/verify-build.js",
+    "test:i18n": "node scripts/test-i18n.js",
+    "deploy": "next build && node scripts/verify-build.js",
+    "deploy:full": "./scripts/deploy.sh",
     "start": "next start",
     "lint": "next lint"
   },

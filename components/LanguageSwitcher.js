@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useLocale, getSwitchLanguagePath } from '../utils/i18n';
 
 const GlobeIcon = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -13,7 +12,28 @@ const GlobeIcon = (props) => (
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-  const { locale: activeLocale, availableLocales } = useLocale();
+  const availableLocales = ['zh', 'en'];
+  const activeLocale = router.asPath.startsWith('/en') ? 'en' : 'zh';
+  
+  // 构建语言切换链接
+  const getLanguageLink = (targetLocale) => {
+    const currentPath = router.asPath;
+    
+    if (targetLocale === 'en') {
+      // 切换到英文
+      if (currentPath.startsWith('/en')) {
+        return currentPath; // 已经是英文路径
+      }
+      return `/en${currentPath === '/' ? '' : currentPath}`;
+    } else {
+      // 切换到中文
+      if (currentPath.startsWith('/en')) {
+        const cleanPath = currentPath.replace('/en', '') || '/';
+        return cleanPath;
+      }
+      return currentPath; // 已经是中文路径
+    }
+  };
 
   return (
     <div className="relative inline-block text-left">
@@ -27,12 +47,11 @@ const LanguageSwitcher = () => {
         <Transition as={Fragment}>
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              {(availableLocales || []).map((locale) => (
+              {availableLocales.map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      // 关键修改：手动构建语言切换链接
-                      href={locale === 'en' ? `/en${router.asPath === '/' ? '' : router.asPath}` : router.asPath.replace('/en', '') || '/'}
+                      href={getLanguageLink(locale)}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}

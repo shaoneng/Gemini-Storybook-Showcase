@@ -11,7 +11,8 @@ import storiesData from '../../data/stories.json';
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
-  const { locale } = router;
+  // 从路径检测语言，因为静态导出时 router.locale 不可用
+  const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
   const [copyButtonText, setCopyButtonText] = useState(t('story_copy_button'));
 
   if (!story) {
@@ -69,24 +70,21 @@ const StoryPage = ({ story }) => {
   );
 };
 
-// *** 关键修改 2: 使用导入的数据生成所有可能的语言路径 ***
-export async function getStaticPaths({ locales }) {
-  const paths = [];
-  storiesData.forEach((story) => {
-    for (const locale of locales) {
-      paths.push({ params: { id: story.id }, locale });
-    }
-  });
+// *** 关键修改 2: 静态导出时不依赖 locales 参数 ***
+export async function getStaticPaths() {
+  const paths = storiesData.map((story) => ({
+    params: { id: story.id },
+  }));
   return { paths, fallback: false };
 }
 
 // *** 关键修改 3: 使用导入的数据为每个页面获取 props ***
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({ params }) {
   const story = storiesData.find((s) => s.id === params.id);
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common'])),
+      ...(await serverSideTranslations('zh', ['common'])),
       story,
     },
   };
