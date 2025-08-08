@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import storiesData from '../../data/stories.json';
+import storiesData from '../data/stories.json';
 
 const SectionTitle = ({ children }) => <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">{children}</h2>;
 const FeatureCard = ({ title, description }) => (
