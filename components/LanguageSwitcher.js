@@ -12,6 +12,7 @@ const GlobeIcon = (props) => (
 
 const LanguageSwitcher = () => {
   const router = useRouter();
+  // 关键修改：重新从 router 中获取 locales，这将正常工作
   const { locales, locale: activeLocale } = router;
 
   return (
@@ -23,15 +24,16 @@ const LanguageSwitcher = () => {
           </Menu.Button>
         </div>
 
-        <Transition as={Fragment} /* ... */ >
+        <Transition as={Fragment}>
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              {locales.map((locale) => (
+              {(locales || []).map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
+                      // 关键修改：恢复为标准用法，Next.js 会自动处理正确的 URL
                       href={router.asPath}
-                      locale={locale} // Next.js 会自动处理正确的 URL
+                      locale={locale}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}

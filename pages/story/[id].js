@@ -1,11 +1,11 @@
-// pages/story/[id].js
+// 文件路径: /pages/story/[id].js
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-// *** 修改点 1: 直接从本地导入 JSON 文件 ***
+// *** 关键修改 1: 直接从本地导入故事数据 ***
 import storiesData from '../../data/stories.json';
 
 const StoryPage = ({ story }) => {
@@ -14,8 +14,11 @@ const StoryPage = ({ story }) => {
   const { locale } = router;
   const [copyButtonText, setCopyButtonText] = useState(t('story_copy_button'));
 
-  if (router.isFallback) return <div>正在加载...</div>;
+  if (!story) {
+    return <div>Story not found.</div>;
+  }
 
+  // ... (您的组件其余部分代码保持不变)
   const handleCopyPrompt = async () => {
     if (!story.prompt[locale]) return;
     try {
@@ -66,7 +69,7 @@ const StoryPage = ({ story }) => {
   );
 };
 
-// *** 修改点 2: 使用导入的数据生成静态路径 ***
+// *** 关键修改 2: 使用导入的数据生成所有可能的语言路径 ***
 export async function getStaticPaths({ locales }) {
   const paths = [];
   storiesData.forEach((story) => {
@@ -77,7 +80,7 @@ export async function getStaticPaths({ locales }) {
   return { paths, fallback: false };
 }
 
-// *** 修改点 3: 使用导入的数据获取页面 props ***
+// *** 关键修改 3: 使用导入的数据为每个页面获取 props ***
 export async function getStaticProps({ params, locale }) {
   const story = storiesData.find((s) => s.id === params.id);
   return {
