@@ -2,8 +2,6 @@
 import '../styles/globals.css';
 import { appWithTranslation } from 'next-i18next';
 import Layout from '../components/Layout';
-// *** 关键修改：确保从 .js 文件导入 ***
-import nextI18NextConfig from '../next-i18next.config.js';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -13,4 +11,5 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default appWithTranslation(MyApp, nextI18NextConfig);
+// 恢复为标准用法，不带第二个参数
+export default appWithTranslation(MyApp);

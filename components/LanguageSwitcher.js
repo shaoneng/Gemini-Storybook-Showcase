@@ -3,30 +3,16 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-// *** 关键修改：确保从 .js 文件导入 ***
-import nextI18NextConfig from '../next-i18next.config.js';
 
 const GlobeIcon = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C13.18 7.76 14.16 9 15.334 9s2.154-1.24 2.4-2.636M15.334 9v12m-3.334-12V3m0 12h-3.334" />
-  </svg>
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C13.18 7.76 14.16 9 15.334 9s2.154-1.24 2.4-2.636M15.334 9v12m-3.334-12V3m0 12h-3.334" />
+    </svg>
 );
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-  const { locale: activeLocale, asPath } = router;
-  const { locales, defaultLocale } = nextI18NextConfig.i18n;
-
-  const getHrefForLocale = (locale) => {
-    let path = asPath;
-    if (activeLocale && path.startsWith(`/${activeLocale}`)) {
-      path = path.substring(activeLocale.length);
-      if (path === '') {
-        path = '/';
-      }
-    }
-    return locale === defaultLocale ? path : `/${locale}${path}`;
-  };
+  const { locales, locale: activeLocale } = router;
 
   return (
     <div className="relative inline-block text-left">
@@ -36,15 +22,16 @@ const LanguageSwitcher = () => {
             <GlobeIcon className="w-5 h-5" aria-hidden="true" />
           </Menu.Button>
         </div>
+
         <Transition as={Fragment} /* ... */ >
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              {(locales || []).map((locale) => (
+              {locales.map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      href={getHrefForLocale(locale)}
-                      locale={false}
+                      href={router.asPath}
+                      locale={locale} // Next.js 会自动处理正确的 URL
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}

@@ -35,7 +35,7 @@ export async function getStaticProps({ locale }) {
   
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'zh', ['common'])),
+      ...(await serverSideTranslations(locale , ['common'])),
       stories: sortedStories,
     },
   };
