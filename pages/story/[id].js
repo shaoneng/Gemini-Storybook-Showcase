@@ -86,7 +86,7 @@ export async function getStaticProps({ params, locale }) {
   const story = storiesData.find((s) => s.id === params.id);
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale || 'zh', ['common'])),
       story,
     },
   };

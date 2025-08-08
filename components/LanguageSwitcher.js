@@ -3,6 +3,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useLocale, getSwitchLanguagePath } from '../utils/i18n';
 
 const GlobeIcon = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -12,8 +13,7 @@ const GlobeIcon = (props) => (
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-  // 关键修改：重新从 router 中获取 locales，这将正常工作
-  const { locales, locale: activeLocale } = router;
+  const { locale: activeLocale, availableLocales } = useLocale();
 
   return (
     <div className="relative inline-block text-left">
@@ -27,13 +27,12 @@ const LanguageSwitcher = () => {
         <Transition as={Fragment}>
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              {(locales || []).map((locale) => (
+              {(availableLocales || []).map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      // 关键修改：恢复为标准用法，Next.js 会自动处理正确的 URL
-                      href={router.asPath}
-                      locale={locale}
+                      // 关键修改：手动构建语言切换链接
+                      href={locale === 'en' ? `/en${router.asPath === '/' ? '' : router.asPath}` : router.asPath.replace('/en', '') || '/'}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}

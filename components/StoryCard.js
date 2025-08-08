@@ -5,8 +5,10 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 const StoryCard = ({ story }) => {
-  const { locale } = useRouter();
+  const router = useRouter();
   const { t } = useTranslation('common');
+  // 从路径检测语言
+  const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
 
   return (
     <Link href={`/story/${story.id}`} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">

@@ -1,3 +1,19 @@
+# 英文路由
+/en /en.html 200
+/en/ /en.html 200
+/en/about /en/about.html 200
+/en/story/:id /en/story/:id.html 200
+
+# 中文路由重定向到默认路径
+/zh / 302
+/zh/ / 302
+/zh/about /about 302
+/zh/story/:id /story/:id 302
+
+# 默认页面（中文）
+/ /index.html 200
+/about /about.html 200
+/story/:id /story/:id.html 200
+
+# 兜底规则
 /* /index.html 200
-/en/* /en/:splat 200
-/zh/* /zh/:splat 200
