@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// *** 修改点 1: 直接从本地导入 JSON 文件 ***
+import storiesData from '../../data/stories.json';
 
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
@@ -64,10 +66,8 @@ const StoryPage = ({ story }) => {
   );
 };
 
+// *** 修改点 2: 使用导入的数据生成静态路径 ***
 export async function getStaticPaths({ locales }) {
-  const res = await fetch('https://geministorybook.online/api/stories'); // 使用 API 获取数据
-  const storiesData = await res.json();
-
   const paths = [];
   storiesData.forEach((story) => {
     for (const locale of locales) {
@@ -77,10 +77,8 @@ export async function getStaticPaths({ locales }) {
   return { paths, fallback: false };
 }
 
+// *** 修改点 3: 使用导入的数据获取页面 props ***
 export async function getStaticProps({ params, locale }) {
-  const res = await fetch('https://your-domain.com/api/stories'); // 使用 API 获取数据
-  const storiesData = await res.json();
-
   const story = storiesData.find((s) => s.id === params.id);
   return {
     props: {
