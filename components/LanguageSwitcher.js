@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-// *** 关键修改 1: 导入 i18n 配置文件 ***
 import nextI18NextConfig from '../next-i18next.config.js';
 
 const GlobeIcon = (props) => (
@@ -14,9 +13,24 @@ const GlobeIcon = (props) => (
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-  // *** 关键修改 2: 不再从 router 获取 locales，而是从配置文件获取 ***
-  const { locale: activeLocale } = router;
-  const { locales } = nextI18NextConfig.i18n;
+  const { locale: activeLocale, pathname, asPath, query } = router;
+  const { locales, defaultLocale } = nextI18NextConfig.i18n;
+
+  // *** 关键修改：为动态路由构建正确的路径 ***
+  // 对于像 /story/[id] 这样的动态页面, 我们需要用实际的查询参数替换掉路径中的 [id]
+  const getAsPathForLocale = (locale) => {
+    let finalPath = asPath;
+    // 如果是默认语言，Link 组件需要一个不带语言前缀的 href
+    if (locale === defaultLocale) {
+        return asPath.replace(`/${activeLocale}`, '');
+    }
+    // 对于非默认语言，确保路径以语言前缀开头
+    if (activeLocale && asPath.startsWith(`/${activeLocale}`)) {
+        return `/${locale}${asPath.substring(activeLocale.length + 1)}`;
+    }
+    return `/${locale}${asPath}`;
+  };
+
 
   return (
     <div className="relative inline-block text-left">
@@ -42,8 +56,9 @@ const LanguageSwitcher = () => {
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      href={router.asPath}
-                      locale={locale}
+                      // *** 关键修改 2: 使用我们新构建的路径 ***
+                      href={getAsPathForLocale(locale)}
+                      locale={false} // 在静态导出模式下，让 Next.js 不要处理 locale
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}
