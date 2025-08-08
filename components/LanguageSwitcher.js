@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-// *** 关键修改：从新的 .mjs 文件导入 ***
 import nextI18NextConfig from '../next-i18next.config.mjs';
 
 const GlobeIcon = (props) => (
@@ -17,14 +16,26 @@ const LanguageSwitcher = () => {
   const { locale: activeLocale, asPath } = router;
   const { locales, defaultLocale } = nextI18NextConfig.i18n;
 
-  const getAsPathForLocale = (locale) => {
-    // 这是一个简化的版本，适用于您的项目结构
-    // 它能正确处理 / 和 /about 等页面的切换
-    const newPath = asPath.startsWith(`/${activeLocale}`)
-      ? asPath.substring(activeLocale.length + 1)
-      : asPath;
-    
-    return locale === defaultLocale ? newPath : `/${locale}${newPath}`;
+  // *** 关键修改：使用更健壮的逻辑来构建不同语言的 URL ***
+  const getHrefForLocale = (locale) => {
+    let path = asPath;
+
+    // 如果当前 URL 包含语言前缀 (例如 /en/about)，则先将其移除，得到基础路径 (/about)
+    if (activeLocale && path.startsWith(`/${activeLocale}`)) {
+      path = path.substring(activeLocale.length);
+      // 如果移除后为空，说明是语言首页，基础路径应为 /
+      if (path === '') {
+        path = '/';
+      }
+    }
+
+    // 如果目标语言是默认语言 (zh)，则直接使用基础路径
+    if (locale === defaultLocale) {
+      return path;
+    }
+
+    // 如果目标语言不是默认语言，则在基础路径前添加语言前缀
+    return `/${locale}${path}`;
   };
 
   return (
@@ -51,8 +62,8 @@ const LanguageSwitcher = () => {
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      href={getAsPathForLocale(locale)}
-                      locale={false} // 必须为 false
+                      href={getHrefForLocale(locale)}
+                      locale={false} // 在静态导出模式下，必须为 false
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}
