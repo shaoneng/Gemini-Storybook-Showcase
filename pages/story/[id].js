@@ -65,7 +65,7 @@ const StoryPage = ({ story }) => {
 };
 
 export async function getStaticPaths({ locales }) {
-  const res = await fetch('https://your-domain.com/api/stories');
+  const res = await fetch('https://geministorybook.online/api/stories'); // 使用 API 获取数据
   const storiesData = await res.json();
 
   const paths = [];
@@ -78,7 +78,7 @@ export async function getStaticPaths({ locales }) {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const res = await fetch('https://your-domain.com/api/stories');
+  const res = await fetch('https://your-domain.com/api/stories'); // 使用 API 获取数据
   const storiesData = await res.json();
 
   const story = storiesData.find((s) => s.id === params.id);
