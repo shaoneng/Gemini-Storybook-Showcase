@@ -3,7 +3,8 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import nextI18NextConfig from '../next-i18next.config.js';
+// *** 关键修改：从新的 .mjs 文件导入 ***
+import nextI18NextConfig from '../next-i18next.config.mjs';
 
 const GlobeIcon = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -13,24 +14,18 @@ const GlobeIcon = (props) => (
 
 const LanguageSwitcher = () => {
   const router = useRouter();
-  const { locale: activeLocale, pathname, asPath, query } = router;
+  const { locale: activeLocale, asPath } = router;
   const { locales, defaultLocale } = nextI18NextConfig.i18n;
 
-  // *** 关键修改：为动态路由构建正确的路径 ***
-  // 对于像 /story/[id] 这样的动态页面, 我们需要用实际的查询参数替换掉路径中的 [id]
   const getAsPathForLocale = (locale) => {
-    let finalPath = asPath;
-    // 如果是默认语言，Link 组件需要一个不带语言前缀的 href
-    if (locale === defaultLocale) {
-        return asPath.replace(`/${activeLocale}`, '');
-    }
-    // 对于非默认语言，确保路径以语言前缀开头
-    if (activeLocale && asPath.startsWith(`/${activeLocale}`)) {
-        return `/${locale}${asPath.substring(activeLocale.length + 1)}`;
-    }
-    return `/${locale}${asPath}`;
+    // 这是一个简化的版本，适用于您的项目结构
+    // 它能正确处理 / 和 /about 等页面的切换
+    const newPath = asPath.startsWith(`/${activeLocale}`)
+      ? asPath.substring(activeLocale.length + 1)
+      : asPath;
+    
+    return locale === defaultLocale ? newPath : `/${locale}${newPath}`;
   };
-
 
   return (
     <div className="relative inline-block text-left">
@@ -52,13 +47,12 @@ const LanguageSwitcher = () => {
         >
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              {locales.map((locale) => (
+              {(locales || []).map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <Link
-                      // *** 关键修改 2: 使用我们新构建的路径 ***
                       href={getAsPathForLocale(locale)}
-                      locale={false} // 在静态导出模式下，让 Next.js 不要处理 locale
+                      locale={false} // 必须为 false
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}
