@@ -14,6 +14,9 @@ const requiredFiles = [
   'story/a-brave-cat-explorer/index.html',
   'story/the-robot-who-learned-to-dance/index.html',
   'en/index.html',
+  'en/about/index.html',
+  'en/story/a-brave-cat-explorer/index.html',
+  'en/story/the-robot-who-learned-to-dance/index.html',
   '_redirects'
 ];
 
