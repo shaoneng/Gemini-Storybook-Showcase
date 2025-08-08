@@ -1,5 +1,6 @@
 // 文件路径: /pages/story/[id].js
 import { useRouter } from 'next/router';
+
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -7,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import stories from '../../data/stories.json';
 
-
+const path = require('path');
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
