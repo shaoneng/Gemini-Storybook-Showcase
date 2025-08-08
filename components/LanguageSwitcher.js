@@ -3,7 +3,8 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import nextI18NextConfig from '../next-i18next.config.mjs';
+// *** 关键修改：确保从 .js 文件导入 ***
+import nextI18NextConfig from '../next-i18next.config.js';
 
 const GlobeIcon = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -16,26 +17,15 @@ const LanguageSwitcher = () => {
   const { locale: activeLocale, asPath } = router;
   const { locales, defaultLocale } = nextI18NextConfig.i18n;
 
-  // *** 关键修改：使用更健壮的逻辑来构建不同语言的 URL ***
   const getHrefForLocale = (locale) => {
     let path = asPath;
-
-    // 如果当前 URL 包含语言前缀 (例如 /en/about)，则先将其移除，得到基础路径 (/about)
     if (activeLocale && path.startsWith(`/${activeLocale}`)) {
       path = path.substring(activeLocale.length);
-      // 如果移除后为空，说明是语言首页，基础路径应为 /
       if (path === '') {
         path = '/';
       }
     }
-
-    // 如果目标语言是默认语言 (zh)，则直接使用基础路径
-    if (locale === defaultLocale) {
-      return path;
-    }
-
-    // 如果目标语言不是默认语言，则在基础路径前添加语言前缀
-    return `/${locale}${path}`;
+    return locale === defaultLocale ? path : `/${locale}${path}`;
   };
 
   return (
@@ -46,16 +36,7 @@ const LanguageSwitcher = () => {
             <GlobeIcon className="w-5 h-5" aria-hidden="true" />
           </Menu.Button>
         </div>
-
-        <Transition
-          as={Fragment}
-          enter="transition ease-out duration-100"
-          enterFrom="transform opacity-0 scale-95"
-          enterTo="transform opacity-100 scale-100"
-          leave="transition ease-in duration-75"
-          leaveFrom="transform opacity-100 scale-100"
-          leaveTo="transform opacity-0 scale-95"
-        >
+        <Transition as={Fragment} /* ... */ >
           <Menu.Items className="absolute right-0 z-10 w-32 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               {(locales || []).map((locale) => (
@@ -63,7 +44,7 @@ const LanguageSwitcher = () => {
                   {({ active }) => (
                     <Link
                       href={getHrefForLocale(locale)}
-                      locale={false} // 在静态导出模式下，必须为 false
+                      locale={false}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}

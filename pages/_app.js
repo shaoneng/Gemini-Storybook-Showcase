@@ -2,8 +2,8 @@
 import '../styles/globals.css';
 import { appWithTranslation } from 'next-i18next';
 import Layout from '../components/Layout';
-// *** 关键修改：从新的 .mjs 文件导入 ***
-import nextI18NextConfig from '../next-i18next.config.mjs';
+// *** 关键修改：确保从 .js 文件导入 ***
+import nextI18NextConfig from '../next-i18next.config.js';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -13,5 +13,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-// 将配置文件作为参数传递，确保客户端能正确初始化
 export default appWithTranslation(MyApp, nextI18NextConfig);
