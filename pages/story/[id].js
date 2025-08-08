@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import storiesData from '../data/stories.json';
+import stories from '../../data/stories.json';
 
 
 const StoryPage = ({ story }) => {
