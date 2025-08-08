@@ -6,13 +6,14 @@ const nextConfig = {
   i18n,
   exportTrailingSlash: true,
   exportPathMap: async () => {
-    return {
-      '/': { page: '/' },
-      '/en': { page: '/en' },
-      '/en/about': { page: '/en/about' },
-      '/zh': { page: '/zh' },
-    };
-  },
+  return {
+    '/': { page: '/' },
+    '/en': { page: '/en' },
+    '/en/story/[id]': { page: '/story/[id]' },
+    '/zh': { page: '/zh' },
+    '/zh/story/[id]': { page: '/story/[id]' },
+  };
+},
 };
 
 export default nextConfig;
