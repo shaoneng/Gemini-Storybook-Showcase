@@ -11,8 +11,8 @@ import storiesData from '../../data/stories.json';
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
   const router = useRouter();
-  // 从路径检测语言，因为静态导出时 router.locale 不可用
-  const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
+  // 从路径或查询参数检测语言
+  const locale = router.asPath.startsWith('/en') || router.query.lang === 'en' ? 'en' : 'zh';
   const [copyButtonText, setCopyButtonText] = useState(t('story_copy_button'));
 
   if (!story) {

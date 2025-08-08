@@ -1,0 +1,40 @@
+# Cloudflare Pages 配置文件
+name = "geministorybook"
+compatibility_date = "2024-08-07"
+
+[env.production]
+name = "geministorybook"
+
+[env.preview]
+name = "geministorybook-preview"
+
+# 构建配置
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "."
+
+# 环境变量
+[vars]
+NODE_ENV = "production"
+
+# 页面规则
+[[redirects]]
+from = "/zh/*"
+to = "/:splat"
+status = 302
+
+[[redirects]]
+from = "/en"
+to = "/en/"
+status = 301
+
+[[redirects]]
+from = "/en/about"
+to = "/about/?lang=en"
+status = 200
+
+[[redirects]]
+from = "/en/story/*"
+to = "/story/:splat?lang=en"
+status = 200

@@ -1,4 +1,4 @@
-# 英文路由
+# 英文路由 - 使用查询参数传递语言信息
 /en /en/index.html 200
 /en/ /en/index.html 200
 /en/about /about/index.html?lang=en 200

@@ -1,5 +1,6 @@
 // 文件路径: /pages/about.js
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -13,6 +14,9 @@ const FeatureCard = ({ title, description }) => (
 
 const AboutPage = () => {
   const { t } = useTranslation(['about', 'common']);
+  const router = useRouter();
+  // 从查询参数检测语言
+  const locale = router.query.lang === 'en' ? 'en' : 'zh';
 
   return (
     <>
