@@ -1,16 +1,15 @@
-// 从 next-i18next 的配置文件中导入 i18n 配置
 import nextI18NextConfig from './next-i18next.config.js';
 const { i18n } = nextI18NextConfig;
 
 const nextConfig = {
   reactStrictMode: true,
-  // 关键修改：重新启用 Next.js 内置的 i18n 路由功能
   i18n,
-  exportTrailingSlash: true,  // 启用结尾的斜杠
+  exportTrailingSlash: true,
   exportPathMap: async () => {
     return {
       '/': { page: '/' },
       '/en': { page: '/en' },
+      '/en/about': { page: '/en/about' },
       '/zh': { page: '/zh' },
     };
   },
