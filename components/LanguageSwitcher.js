@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 // *** 关键修改 1: 导入 i18n 配置文件 ***
-import nextI18NextConfig from '../../next-i18next.config.js';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 const GlobeIcon = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
