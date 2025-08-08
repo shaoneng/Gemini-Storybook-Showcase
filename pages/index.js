@@ -3,8 +3,8 @@ import Head from 'next/head';
 import StoryCard from '../components/StoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// 数据已经在这里被正确导入了
 import storiesData from '../data/stories.json';
-
 
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
@@ -30,12 +30,11 @@ const HomePage = ({ stories }) => {
   );
 };
 
+// *** 关键修改：彻底删除文件读取逻辑，直接使用已导入的 storiesData ***
 export async function getStaticProps({ locale }) {
-  const filePath = path.join(process.cwd(), 'data', 'stories.json');
-  const jsonData = await fs.readFile(filePath, 'utf-8');
-  const storiesData = JSON.parse(jsonData);
-
+  // 直接使用导入的 storiesData 变量进行排序
   const sortedStories = storiesData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
+  
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
