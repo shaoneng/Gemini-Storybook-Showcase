@@ -81,6 +81,7 @@ export async function getStaticPaths({ locales }) {
 }
 
 // *** 关键修改 3: 使用导入的数据为每个页面获取 props ***
+
 export async function getStaticProps({ params, locale }) {
   const story = storiesData.find((s) => s.id === params.id);
   return {

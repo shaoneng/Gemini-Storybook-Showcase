@@ -1,5 +1,3 @@
-// 文件路径: /next.config.mjs
-/** @type {import('next').NextConfig} */
 
 // 从 next-i18next 的配置文件中导入 i18n 配置
 import nextI18NextConfig from './next-i18next.config.js';
