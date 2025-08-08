@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Test</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Testing Redirects</h1>
+    <p>If you can see this page, the basic file serving is working.</p>
+    
+    <h2>Test Links:</h2>
+    <ul>
+        <li><a href="/story/a-brave-cat-explorer/">中文故事页面</a></li>
+        <li><a href="/story/a-brave-cat-explorer/?lang=en">英文故事页面（查询参数）</a></li>
+        <li><a href="/en/story/a-brave-cat-explorer/">英文故事页面（重定向）</a></li>
+    </ul>
+    
+    <script>
+        // 显示当前 URL 和查询参数
+        document.body.innerHTML += '<h2>Current URL Info:</h2>';
+        document.body.innerHTML += '<p>URL: ' + window.location.href + '</p>';
+        document.body.innerHTML += '<p>Search: ' + window.location.search + '</p>';
+        
+        // 检查语言参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+        if (lang) {
+            document.body.innerHTML += '<p style="color: green;">Language parameter detected: ' + lang + '</p>';
+        } else {
+            document.body.innerHTML += '<p style="color: red;">No language parameter found</p>';
+        }
+    </script>
+</body>
+</html>

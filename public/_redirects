@@ -1,22 +1,22 @@
-# 英文路由 - 使用查询参数传递语言信息
-/en /en/index.html 200
-/en/ /en/index.html 200
-/en/about /about/index.html?lang=en 200
-/en/story/a-brave-cat-explorer /story/a-brave-cat-explorer/index.html?lang=en 200
-/en/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance/index.html?lang=en 200
+# 英文路由重定向 - 使用正确的文件路径
+/en/story/a-brave-cat-explorer /story/a-brave-cat-explorer/?lang=en 302
+/en/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance/?lang=en 302
+/en/about /about/?lang=en 302
+/en /en/ 200
+/en/ /en/ 200
 
 # 中文路由重定向
+/zh/story/a-brave-cat-explorer /story/a-brave-cat-explorer/ 302
+/zh/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance/ 302
+/zh/about /about/ 302
 /zh / 302
 /zh/ / 302
-/zh/about /about 302
-/zh/story/a-brave-cat-explorer /story/a-brave-cat-explorer 302
-/zh/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance 302
 
-# 默认页面（中文）
+# 默认页面
 / /index.html 200
-/about /about/index.html 200
-/story/a-brave-cat-explorer /story/a-brave-cat-explorer/index.html 200
-/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance/index.html 200
+/about /about/ 200
+/story/a-brave-cat-explorer /story/a-brave-cat-explorer/ 200
+/story/the-robot-who-learned-to-dance /story/the-robot-who-learned-to-dance/ 200
 
 # 兜底规则
 /* /index.html 200
