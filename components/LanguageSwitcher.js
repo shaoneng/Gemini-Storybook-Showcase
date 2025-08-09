@@ -15,23 +15,42 @@ const LanguageSwitcher = () => {
   const availableLocales = ['zh', 'en'];
   const activeLocale = router.asPath.startsWith('/en') ? 'en' : 'zh';
   
-  // 构建语言切换链接
+  // 构建语言切换链接 - 适配独立页面结构
   const getLanguageLink = (targetLocale) => {
     const currentPath = router.asPath;
     
     if (targetLocale === 'en') {
-      // 切换到英文
+      // 切换到英文版本
       if (currentPath.startsWith('/en')) {
         return currentPath; // 已经是英文路径
       }
-      return `/en${currentPath === '/' ? '' : currentPath}`;
-    } else {
-      // 切换到中文
-      if (currentPath.startsWith('/en')) {
-        const cleanPath = currentPath.replace('/en', '') || '/';
-        return cleanPath;
+      
+      // 根据当前页面映射到对应的英文页面
+      if (currentPath === '/') {
+        return '/en';
+      } else if (currentPath === '/about') {
+        return '/en/about';
+      } else if (currentPath.startsWith('/story/')) {
+        return `/en${currentPath}`;
       }
-      return currentPath; // 已经是中文路径
+      
+      return `/en${currentPath}`;
+    } else {
+      // 切换到中文版本
+      if (!currentPath.startsWith('/en')) {
+        return currentPath; // 已经是中文路径
+      }
+      
+      // 从英文路径映射到中文路径
+      if (currentPath === '/en' || currentPath === '/en/') {
+        return '/';
+      } else if (currentPath === '/en/about') {
+        return '/about';
+      } else if (currentPath.startsWith('/en/story/')) {
+        return currentPath.replace('/en', '');
+      }
+      
+      return currentPath.replace('/en', '') || '/';
     }
   };
 

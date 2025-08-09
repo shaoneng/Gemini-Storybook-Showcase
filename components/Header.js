@@ -1,21 +1,30 @@
 // 文件路径: /components/Header.js
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const { t } = useTranslation('common');
+  const router = useRouter();
   const googleFormLink = "https://forms.gle/7LEUEsvjHL3fp4Zz7";
+  
+  // 检测当前语言
+  const isEnglish = router.asPath.startsWith('/en');
+  
+  // 根据当前语言生成正确的链接
+  const homeLink = isEnglish ? '/en' : '/';
+  const aboutLink = isEnglish ? '/en/about' : '/about';
 
   return (
     <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-500 transition-colors">
+        <Link href={homeLink} className="text-2xl font-bold text-gray-800 hover:text-blue-500 transition-colors">
           {t('site_title')}
         </Link>
         <div className="flex items-center space-x-4">
-          <Link href="/about" className="hidden sm:block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 transition-colors">
+          <Link href={aboutLink} className="hidden sm:block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 transition-colors">
             {t('nav_what_is_storybook')}
           </Link>
           <a
