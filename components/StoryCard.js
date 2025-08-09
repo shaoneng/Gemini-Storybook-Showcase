@@ -1,6 +1,5 @@
 // 文件路径: /components/StoryCard.js
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
@@ -30,10 +29,7 @@ const StoryCard = ({ story }) => {
   return (
     <Link href={storyLink} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
       <div className="relative w-full h-56 overflow-hidden bg-gray-100">
-        {/* 调试信息 */}
-        <div className="absolute top-2 left-2 z-50 text-xs bg-white px-2 py-1 rounded">
-          {imageError ? '❌' : imageLoaded ? '✅' : '⏳'}
-        </div>
+
         
         {/* 加载状态 */}
         {!imageLoaded && !imageError && (
@@ -56,16 +52,12 @@ const StoryCard = ({ story }) => {
         )}
         
         {/* 图片 */}
-        <Image 
+        <img 
           src={story.coverImageUrl} 
           alt={story.title[locale]} 
-          fill
-          style={{ objectFit: 'cover' }}
-          className={`transition-all duration-500 group-hover:scale-110`}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
           onLoad={handleImageLoad}
           onError={handleImageError}
-          priority={false}
         />
         
         {/* 遮罩层 */}
