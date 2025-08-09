@@ -1,4 +1,3 @@
-
 [
   {
     "id": "a-brave-cat-explorer",
@@ -53,5 +52,23 @@
       "zh": "故事以霍格沃茨分院帽的视角展开，跨越整个学年。这顶蕴含着千年记忆与创始人偏见的魔帽，讲述了为三位棘手的学生——一位勇敢的赫奇帕奇、一位忠诚的斯莱特林和一位精于算计的拉文克劳——进行分院的艰难过程。随后，它默默观察着这些学生一整年的经历，看他们的人生轨迹如何挑战并最终印证其古老的裁决。"
     },
     "submissionDate": "2025-09-01T09:00:00Z"
+  },
+  {
+    "id": "the-knockturn-conspiracy",
+    "title": {
+      "en": "The Knockturn Conspiracy",
+      "zh": "翻倒巷的阴谋"
+    },
+    "author": {
+      "en": "Noir Storyteller",
+      "zh": "黑色小说家"
+    },
+    "coverImageUrl": "/covers/knockturn-conspiracy.png",
+    "shareUrl": "https://g.co/gemini/share/e651936f8b21",
+    "prompt": {
+      "en": "In 1950s magical London, a cynical, retired Auror-turned-private-investigator is hired by a mysterious femme fatale to find a stolen Dark Arts artifact that can supposedly make the dead speak. The case plunges him into a shadowy conspiracy weaving through Ministry politics and ancient Pure-blood families, all set in a classic film noir style.",
+      "zh": "在1950年代的魔法伦敦，一位因在对抗格林德沃的战争中受伤而退役、愤世嫉俗的前傲罗，如今在翻倒巷经营着一家私人侦探办公室。一位身着深色长袍的神秘蛇蝎美人前来，雇佣他寻找一件据称能“让死者开口”的被盗黑魔法物品。这起调查将他拖入了一个涉及魔法部政治和古老纯血家族的肮脏阴谋之中，整体呈现经典黑色电影的风格。"
+    },
+    "submissionDate": "2025-10-15T14:30:00Z"
   }
 ]

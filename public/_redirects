@@ -4,6 +4,7 @@
 /en/about /en/about.html 200
 /en /en.html 200
 /en/story/the-hats-judgment /en/story/the-hats-judgment.html 200
+/en/story/knockturn-conspiracy /en/story/knockturn-conspiracy.html 200
 
 # 中文重定向
 /zh/* /:splat 302
