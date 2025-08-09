@@ -2,12 +2,44 @@
 import '../styles/globals.css';
 import { appWithTranslation } from 'next-i18next';
 import Layout from '../components/Layout';
+import Script from 'next/script';
+import { useEffect } from 'react';
 
 const MyApp = ({ Component, pageProps }) => {
+  // 初始化Google Analytics
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-49WRVFC2QQ');
+      
+      // 将gtag函数设为全局可用
+      window.gtag = gtag;
+    }
+  }, []);
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      {/* Google Analytics Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-49WRVFC2QQ"
+        strategy="afterInteractive"
+      />
+      
+      {/* Google AdSense Script */}
+      <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9886602787991072"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+      />
+      
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 };
 
