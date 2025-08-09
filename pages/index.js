@@ -1,6 +1,6 @@
 // 文件路径: /pages/index.js
 import Head from 'next/head';
-import StoryCard from '../components/StoryCard';
+import SimpleStoryCard from '../components/SimpleStoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
@@ -25,7 +25,7 @@ const HomePage = ({ stories }) => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {stories.map((story) => (
-          <StoryCard key={story.id} story={story} />
+          <SimpleStoryCard key={story.id} story={story} />
         ))}
       </div>
     </>
