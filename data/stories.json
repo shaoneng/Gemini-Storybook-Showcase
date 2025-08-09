@@ -35,5 +35,23 @@
       "zh": "以复古未来主义的漫画书风格生成一本故事书。主角是一个笨拙但善良的机器人734号，他想学会跳舞，在年度机器人舞会上给朋友们留下深刻印象。故事应该有趣且温暖人心。"
     },
     "submissionDate": "2025-08-06T15:30:00Z"
+  },
+  {
+    "id": "the-hats-judgment",
+    "title": {
+      "en": "The Hat's Judgment",
+      "zh": "分院帽的裁决"
+    },
+    "author": {
+      "en": "The Hogwarts Chronicler",
+      "zh": "霍格沃茨记录者"
+    },
+    "coverImageUrl": "/covers/the-hats-judgment.png",
+    "shareUrl": "https://gemini.google.com/share/62db7cc51159",
+    "prompt": {
+      "en": "A story narrated by the Hogwarts Sorting Hat over a full school year. Drawing from a millennium of memories and the Founders' biases, the Hat recounts the difficult sorting of three students: a courageous Hufflepuff, a loyal Slytherin, and a calculating Ravenclaw. It then silently observes as their journeys throughout the year both defy and fulfill its ancient judgment.",
+      "zh": "故事以霍格沃茨分院帽的视角展开，跨越整个学年。这顶蕴含着千年记忆与创始人偏见的魔帽，讲述了为三位棘手的学生——一位勇敢的赫奇帕奇、一位忠诚的斯莱特林和一位精于算计的拉文克劳——进行分院的艰难过程。随后，它默默观察着这些学生一整年的经历，看他们的人生轨迹如何挑战并最终印证其古老的裁决。"
+    },
+    "submissionDate": "2025-09-01T09:00:00Z"
   }
 ]

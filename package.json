@@ -8,6 +8,7 @@
     "verify": "node scripts/verify-build.js",
     "test:i18n": "node scripts/test-i18n.js",
     "test:deployment": "node scripts/test-deployment.js",
+    "add-story": "node scripts/add-story.js",
     "deploy": "next build && node scripts/verify-build.js",
     "deploy:full": "./scripts/deploy.sh",
     "start": "next start",
