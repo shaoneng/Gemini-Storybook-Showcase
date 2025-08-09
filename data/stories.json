@@ -1,41 +1,5 @@
 [
   {
-    "id": "a-brave-cat-explorer",
-    "title": {
-      "en": "The Brave Cat Explorer",
-      "zh": "勇敢猫咪探险家"
-    },
-    "author": {
-      "en": "AI Storyteller",
-      "zh": "AI小画家"
-    },
-    "coverImageUrl": "/covers/cat-explorer.png",
-    "shareUrl": "https://g.co/gemini/share/f0510158d514",
-    "prompt": {
-      "en": "Create a storybook for a 5-year-old about a brave little cat named Leo who explores a mysterious, glowing forest at night. The style should be vibrant and dreamlike, with friendly-looking creatures. The story should teach a gentle lesson about curiosity and courage.",
-      "zh": "为5岁孩子创作一本图画书，讲述一只名叫里奥的勇敢小猫，在夜晚探索一个神秘发光森林的故事。风格应充满活力和梦幻感，里面的生物看起来都很友好。故事应温和地传达关于好奇心和勇气的课程。"
-    },
-    "submissionDate": "2025-08-07T10:00:00Z"
-  },
-  {
-    "id": "the-robot-who-learned-to-dance",
-    "title": {
-      "en": "The Robot Who Learned to Dance",
-      "zh": "学跳舞的机器人"
-    },
-    "author": {
-      "en": "Creative Engineer",
-      "zh": "创意工程师"
-    },
-    "coverImageUrl": "/covers/dancing-robot.png",
-    "shareUrl": "https://g.co/gemini/share/255509e2d748",
-    "prompt": {
-      "en": "Generate a storybook in a retro-futuristic comic book style. The main character is a clumsy but kind-hearted robot, Unit 734, who wants to learn how to dance to impress his friends at the annual Robot Ball. The story should be funny and heartwarming.",
-      "zh": "以复古未来主义的漫画书风格生成一本故事书。主角是一个笨拙但善良的机器人734号，他想学会跳舞，在年度机器人舞会上给朋友们留下深刻印象。故事应该有趣且温暖人心。"
-    },
-    "submissionDate": "2025-08-06T15:30:00Z"
-  },
-  {
     "id": "the-hats-judgment",
     "title": {
       "en": "The Hat's Judgment",
@@ -88,5 +52,59 @@
       "zh": "当一记群体遗忘咒发生严重错误，对角巷里的所有巫师和女巫瞬间忘记了“魔法”这一概念，但他们自身的力量却依然存在。一名幸免于难的药剂师学徒必须在随之而来的混乱中穿行，悄悄引导那些强大却茫然无措的人们，同时争分夺秒地寻找方法来逆转这个灾难性的咒语。"
     },
     "submissionDate": "2025-11-20T18:00:00Z"
+  },
+  {
+    "id": "a-shy-hedgehogs-first-day-at-school",
+    "title": {
+      "en": "The Shy Hedgehog's Sweet First Day",
+      "zh": "小刺猬的甜蜜开学日"
+    },
+    "author": {
+      "en": "AI Storyteller",
+      "zh": "AI小画家"
+    },
+    "coverImageUrl": "/covers/shy-hedgehog-school.png",
+    "shareUrl": "https://g.co/gemini/share/6c7fc108a011",
+    "prompt": {
+      "en": "Create a heartwarming and healing storybook for children aged 3-5 about a shy little hedgehog named Doudou, who is anxious about his first day at school. He's afraid his sharp quills, which stand up when he's nervous, will prevent him from making new friends. The story, set in a magical forest kindergarten, gently explores themes of overcoming social anxiety, the beauty of being different, and creative problem-solving. Show how his new friends, a cheerful bear and a timid squirrel, help him by cleverly putting soft marshmallows on his spikes, turning his biggest fear into a sweet and unique trait. The style should be warm, comforting, and humorous, designed to ease children's back-to-school fears.",
+      "zh": "为3-5岁儿童创作一本温暖治愈的图画书，主题是关于一只名叫豆豆的害羞小刺猬，对他开学第一天感到非常焦虑。他害怕自己紧张时会竖起的尖刺让他交不到新朋友。故事发生在一个奇妙的森林幼儿园里，温和地探讨了如何克服社交恐惧、接纳自己的与众不同，以及创造性地解决问题。情节围绕着活泼的小熊和胆小的松鼠这两个新朋友，如何巧妙地将软绵绵的棉花糖插在豆豆的尖刺上，把他最大的恐惧变成了一个甜蜜又独特的优点。整体风格应温暖、治愈且带有一丝幽默感，旨在有效缓解孩子们的开学焦虑情绪。"
+    },
+    "submissionDate": "2025-08-08T10:00:00Z"
+  },
+  {
+    "id": "summer-beach-secret-treasure",
+    "title": {
+      "en": "The Secret Treasure of Summer Beach",
+      "zh": "夏日海滩的秘密宝藏"
+    },
+    "author": {
+      "en": "AI Storyteller",
+      "zh": "AI小画家"
+    },
+    "coverImageUrl": "/covers/summer-beach-treasure.png",
+    "shareUrl": "https://g.co/gemini/share/49d5558d0c1c",
+    "prompt": {
+      "en": "Create a storybook for 3-6 year olds about two sisters, a cheerful 6-year-old named Hikari and her shy 4-year-old sister Shio. On their first trip to the beach, Shio loses her precious shell necklace. To comfort her sister, Hikari leads a search and they meet helpful animal friends: a knowledgeable Mr. Hermit Crab, playful dolphin messengers, and a kind Grandpa Anglerfish who lights up the deep. With their help, they find the necklace. The style should be a fresh and bright Japanese anime aesthetic, with a warm, healing, and fantastical atmosphere. The story should emphasize themes of sisterly love, courage, optimism, and the harmony between humans and nature.",
+      "zh": "为3-6岁儿童创作一本绘本故事，主角是活泼的6岁姐姐小光和害羞的4岁妹妹小汐。在一次夏日海滩之旅中，小汐不慎丢失了她珍爱的贝壳项链。为了安慰妹妹，勇敢的小光承诺一定帮忙找回。她们在寻找过程中，遇到了博学的寄居蟹先生、友善的海豚母子和慈祥的灯笼鱼爷爷。在这些新朋友的帮助下，她们最终找回了项链。故事风格需采用日漫清新风格，色彩明亮治愈，充满温暖的幻想色彩，旨在传达姐妹情深、勇敢乐观以及人与自然和谐共处的主题。"
+    },
+    "submissionDate": "2025-08-08T11:43:00Z"
+  },
+  {
+    "id": "moon-rabbits-earth-adventure",
+    "title": {
+      "en": "The Moon Rabbit's Earth Adventure",
+      "zh": "月亮兔子的地球探险"
+    },
+    "author": {
+      "en": "AI Storyteller",
+      "zh": "AI小画家"
+    },
+    "coverImageUrl": "/covers/moon-rabbit-adventure.png",
+    "shareUrl": "https://g.co/gemini/share/eb109edeaa3a",
+    "prompt": {
+      "en": "Create a storybook for children about a timid moon rabbit named Tuanzi. Curious about Earth but afraid of the unknown, he bravely journeys there with a lost star. He meets a kind girl named Guang and learns that new experiences aren't scary, but wonderful. This heartwarming story, in a Japanese anime style, teaches about courage, overcoming fear, and the joy of friendship.",
+      "zh": "为儿童创作一本关于胆小月兔“团子”的图画书。他对地球充满好奇却又害怕未知，在一个小星星的陪伴下，他勇敢地前往地球，遇见了善良的女孩“小光”，并最终明白新体验并不可怕，反而充满惊喜。这个温暖人心的故事采用日漫风格，旨在教会孩子们关于勇气、克服恐惧和友谊的快乐。"
+    },
+    "submissionDate": "2025-08-08T22:30:00Z"
   }
 ]

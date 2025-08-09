@@ -6,6 +6,12 @@
 /en/story/the-hats-judgment /en/story/the-hats-judgment.html 200
 /en/story/knockturn-conspiracy /en/story/knockturn-conspiracy.html 200
 /en/story/the-great-obliviation /en/story/the-great-obliviation.html 200
+/en/story/a-shy-hedgehogs-first-day-at-school /en/story/a-shy-hedgehogs-first-day-at-school.html 200
+/en/story/summer-beach-secret-treasure /en/story/summer-beach-secret-treasure.html 200
+/en/story/moon-rabbits-earth-adventure /en/story/moon-rabbits-earth-adventure.html 200
+
+
+
 
 # 中文重定向
 /zh/* /:splat 302
