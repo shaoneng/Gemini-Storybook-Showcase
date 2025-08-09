@@ -54,6 +54,12 @@ const LanguageSwitcher = () => {
     }
   };
 
+  // 处理语言切换
+  const handleLanguageChange = (targetLocale) => {
+    const targetUrl = getLanguageLink(targetLocale);
+    router.push(targetUrl);
+  };
+
   return (
     <div className="relative inline-block text-left">
       <Menu as="div" className="relative">
@@ -69,16 +75,16 @@ const LanguageSwitcher = () => {
               {availableLocales.map((locale) => (
                 <Menu.Item key={locale}>
                   {({ active }) => (
-                    <Link
-                      href={getLanguageLink(locale)}
+                    <button
+                      onClick={() => handleLanguageChange(locale)}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}
-                        block px-4 py-2 text-sm
+                        block px-4 py-2 text-sm w-full text-left
                       `}
                     >
                       {locale === 'zh' ? '中文' : 'English'}
-                    </Link>
+                    </button>
                   )}
                 </Menu.Item>
               ))}
