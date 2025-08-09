@@ -1,25 +1,33 @@
 # 英文路由 - 直接指向英文页面
-/en/story/a-brave-cat-explorer /en/story/a-brave-cat-explorer.html 200
-/en/story/the-robot-who-learned-to-dance /en/story/the-robot-who-learned-to-dance.html 200
-/en/about /en/about.html 200
-/en /en.html 200
-/en/story/the-hats-judgment /en/story/the-hats-judgment.html 200
-/en/story/knockturn-conspiracy /en/story/knockturn-conspiracy.html 200
-/en/story/the-great-obliviation /en/story/the-great-obliviation.html 200
-/en/story/a-shy-hedgehogs-first-day-at-school /en/story/a-shy-hedgehogs-first-day-at-school.html 200
-/en/story/summer-beach-secret-treasure /en/story/summer-beach-secret-treasure.html 200
-/en/story/moon-rabbits-earth-adventure /en/story/moon-rabbits-earth-adventure.html 200
+/en/story/the-hats-judgment /en/story/the-hats-judgment/index.html 200
+/en/story/the-knockturn-conspiracy /en/story/the-knockturn-conspiracy/index.html 200
+/en/story/the-great-obliviation /en/story/the-great-obliviation/index.html 200
+/en/story/a-shy-hedgehogs-first-day-at-school /en/story/a-shy-hedgehogs-first-day-at-school/index.html 200
+/en/story/summer-beach-secret-treasure /en/story/summer-beach-secret-treasure/index.html 200
+/en/story/moon-rabbits-earth-adventure /en/story/moon-rabbits-earth-adventure/index.html 200
+/en/story/sunrise-on-whispering-wind-mountain /en/story/sunrise-on-whispering-wind-mountain/index.html 200
+/en/about /en/about/index.html 200
+/en /en/index.html 200
 
-
-
+# 中文故事路由 - 指向正确的目录结构
+/story/the-hats-judgment /story/the-hats-judgment/index.html 200
+/story/the-knockturn-conspiracy /story/the-knockturn-conspiracy/index.html 200
+/story/the-great-obliviation /story/the-great-obliviation/index.html 200
+/story/a-shy-hedgehogs-first-day-at-school /story/a-shy-hedgehogs-first-day-at-school/index.html 200
+/story/summer-beach-secret-treasure /story/summer-beach-secret-treasure/index.html 200
+/story/moon-rabbits-earth-adventure /story/moon-rabbits-earth-adventure/index.html 200
+/story/sunrise-on-whispering-wind-mountain /story/sunrise-on-whispering-wind-mountain/index.html 200
+/story/the-great-obliviation /story/the-great-obliviation/index.html 200
 
 # 中文重定向
 /zh/* /:splat 302
 
 # 默认路由
 / /index.html 200
-/about /about.html 200
-/story/* /story/:splat.html 200
+/about /about/index.html 200
+
+# 通用故事路由（作为备用）
+/story/* /story/:splat/index.html 200
 
 # 兜底
 /* /index.html 200

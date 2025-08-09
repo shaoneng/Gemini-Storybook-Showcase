@@ -106,5 +106,23 @@
       "zh": "为儿童创作一本关于胆小月兔“团子”的图画书。他对地球充满好奇却又害怕未知，在一个小星星的陪伴下，他勇敢地前往地球，遇见了善良的女孩“小光”，并最终明白新体验并不可怕，反而充满惊喜。这个温暖人心的故事采用日漫风格，旨在教会孩子们关于勇气、克服恐惧和友谊的快乐。"
     },
     "submissionDate": "2025-08-08T22:30:00Z"
+  },
+  {
+    "id": "sunrise-on-whispering-wind-mountain",
+    "title": {
+      "en": "Sunrise on Whispering Wind Mountain",
+      "zh": "风语山的日出"
+    },
+    "author": {
+      "en": "AI Storyteller",
+      "zh": "AI小画家"
+    },
+    "coverImageUrl": "/covers/sunrise-on-whispering-wind-mountain.png",
+    "shareUrl": "https://g.co/gemini/share/c1a038e9f2b1",
+    "prompt": {
+      "en": "Create a storybook for 6-8 year olds about an energetic little boy named Yuki, with curious eyes and an anime-style haircut. He embarks on a solo journey to climb the mysterious 'Whispering Wind Mountain' to see the legendary 'Wishing Sunrise,' which is said to grant any wish. The path is difficult, and he gets lost in a thick fog. Just as he's about to give up, he meets a wise, talking old mountain goat. The goat teaches him to find the way by listening to the wind, observing moss on rocks, and following the brave little mountain flowers. Using this wisdom and his own courage, Yuki successfully reaches the summit before dawn. Awed by the magnificent sunrise, he forgets all about making a wish, realizing that the journey, perseverance, and the beauty he witnessed were the real rewards. The style should be a beautiful and detailed anime aesthetic, with vibrant, hopeful, and fantastical colors. The story should convey that the journey is more important than the destination, emphasizing the values of courage, perseverance, and learning from nature. Include quotes like: 'The wind whispers secrets to those who listen,' 'Every flower blooming on the cliff is a little guide of courage,' and 'Yuki reached the top, his heart beating like a drum, not with fear, but with joy.'",
+      "zh": "为6-8岁的孩子创作一本图画书，故事关于一个名叫“小悠”的活泼小男孩，他有好奇的大眼睛和标志性的日漫发型。小悠听说“风语山”山顶的“许愿日出”能实现愿望，便决定独自登山。路途比想象中更艰难，他在浓雾中迷了路，感到害怕。关键时刻，他遇到了一只智慧的、会说话的老山羚羊。山羚羊没有直接指路，而是教他如何“倾听风的声音”、“观察岩石上的苔藓”和“跟随山地小花”来找到最安全的路。凭借着这份智慧和自身的勇气，小悠终于在日出前成功登顶。他被灿烂的日出美景震撼，完全忘记了许愿，并领悟到过程比结果更重要，冒险中的坚持与智慧才是最大的收获。风格要求为唯美细腻的日漫风格，画面充满希望与奇幻感。故事需强调勇气、坚持以及向大自然学习的价值。"
+    },
+    "submissionDate": "2025-08-09T12:00:00Z"
   }
 ]
