@@ -18,17 +18,23 @@ const StoryCard = ({ story }) => {
   const storyLink = locale === 'en' ? `/en/story/${story.id}` : `/story/${story.id}`;
 
   const handleImageLoad = () => {
+    console.log('图片加载成功:', story.coverImageUrl);
     setImageLoaded(true);
   };
 
-  const handleImageError = () => {
-    console.log('图片加载失败:', story.coverImageUrl);
+  const handleImageError = (e) => {
+    console.error('图片加载失败:', story.coverImageUrl, e);
     setImageError(true);
   };
 
   return (
     <Link href={storyLink} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
       <div className="relative w-full h-56 overflow-hidden bg-gray-100">
+        {/* 调试信息 */}
+        <div className="absolute top-2 left-2 z-50 text-xs bg-white px-2 py-1 rounded">
+          {imageError ? '❌' : imageLoaded ? '✅' : '⏳'}
+        </div>
+        
         {/* 加载状态 */}
         {!imageLoaded && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
@@ -50,22 +56,20 @@ const StoryCard = ({ story }) => {
         )}
         
         {/* 图片 */}
-        {!imageError && (
-          <Image 
-            src={story.coverImageUrl} 
-            alt={story.title[locale]} 
-            fill
-            style={{ objectFit: 'cover' }}
-            className={`transition-all duration-500 group-hover:scale-110 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            priority={false}
-          />
-        )}
+        <Image 
+          src={story.coverImageUrl} 
+          alt={story.title[locale]} 
+          fill
+          style={{ objectFit: 'cover' }}
+          className={`transition-all duration-500 group-hover:scale-110`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          priority={false}
+        />
         
         {/* 遮罩层 */}
-        <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-colors"></div>
+        {imageLoaded && <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-5 transition-colors"></div>}
       </div>
       <div className="p-6">
         <h2 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{story.title[locale]}</h2>
