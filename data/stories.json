@@ -70,5 +70,23 @@
       "zh": "在1950年代的魔法伦敦，一位因在对抗格林德沃的战争中受伤而退役、愤世嫉俗的前傲罗，如今在翻倒巷经营着一家私人侦探办公室。一位身着深色长袍的神秘蛇蝎美人前来，雇佣他寻找一件据称能“让死者开口”的被盗黑魔法物品。这起调查将他拖入了一个涉及魔法部政治和古老纯血家族的肮脏阴谋之中，整体呈现经典黑色电影的风格。"
     },
     "submissionDate": "2025-10-15T14:30:00Z"
+  },
+  {
+    "id": "the-great-obliviation",
+    "title": {
+      "en": "The Great Obliviation",
+      "zh": "大遗忘"
+    },
+    "author": {
+      "en": "The Memory Keeper",
+      "zh": "记忆守护者"
+    },
+    "coverImageUrl": "/covers/the-great-obliviation.png",
+    "shareUrl": "https://g.co/gemini/share/b428b610c66a",
+    "prompt": {
+      "en": "When a mass Obliviate charm goes haywire, every witch and wizard in Diagon Alley instantly forgets the concept of magic, though their powers remain. A single, unaffected apothecary's apprentice must navigate the ensuing chaos, secretly guiding powerful but clueless individuals while racing to find a way to reverse the catastrophic spell.",
+      "zh": "当一记群体遗忘咒发生严重错误，对角巷里的所有巫师和女巫瞬间忘记了“魔法”这一概念，但他们自身的力量却依然存在。一名幸免于难的药剂师学徒必须在随之而来的混乱中穿行，悄悄引导那些强大却茫然无措的人们，同时争分夺秒地寻找方法来逆转这个灾难性的咒语。"
+    },
+    "submissionDate": "2025-11-20T18:00:00Z"
   }
 ]
