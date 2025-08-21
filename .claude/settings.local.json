@@ -8,7 +8,9 @@
       "Bash(git config --file .gitmodules --list)",
       "Bash(cat .git/config)",
       "Bash(git submodule)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"fix: remove agents submodule reference to fix Cloudflare deployment\")",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
