@@ -10,7 +10,9 @@
       "Bash(git submodule)",
       "Bash(git add .)",
       "Bash(git commit -m \"fix: remove agents submodule reference to fix Cloudflare deployment\")",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(git submodule deinit agents)",
+      "Bash(git rm --cached agents)"
     ],
     "deny": [],
     "ask": []
