@@ -4,8 +4,21 @@ import { appWithTranslation } from 'next-i18next';
 import Layout from '../components/Layout';
 import Script from 'next/script';
 import { useEffect } from 'react';
+import { useReportWebVitals } from 'next/web-vitals';
 
 const MyApp = ({ Component, pageProps }) => {
+  // Web Vitals 监控
+  useReportWebVitals((metric) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'web_vital', {
+        event_category: 'Web Vitals',
+        event_label: metric.name,
+        value: Math.round(metric.value),
+        non_interaction: true,
+      });
+    }
+  });
+
   // 初始化Google Analytics
   useEffect(() => {
     if (typeof window !== 'undefined') {

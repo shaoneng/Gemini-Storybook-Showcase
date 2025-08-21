@@ -3,12 +3,24 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const StoryCard = ({ story }) => {
   const router = useRouter();
   const { t } = useTranslation('common');
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  
+  // 骨架屏组件
+  const SkeletonLoader = () => (
+    <div className="animate-pulse bg-gray-200 rounded-xl group block transform hover:-translate-y-2 transition-transform duration-300">
+      <div className="relative w-full h-56 bg-gray-300 rounded-t-xl"></div>
+      <div className="p-6">
+        <div className="h-6 bg-gray-300 rounded mb-2"></div>
+        <div className="h-4 bg-gray-300 rounded w-2/3"></div>
+      </div>
+    </div>
+  );
   
   // 从路径检测语言
   const locale = router.asPath.startsWith('/en') ? 'en' : 'zh';
@@ -25,6 +37,11 @@ const StoryCard = ({ story }) => {
     console.error('图片加载失败:', story.coverImageUrl, e);
     setImageError(true);
   };
+
+  // 如果故事数据不存在，显示骨架屏
+  if (!story) {
+    return <SkeletonLoader />;
+  }
 
   return (
     <Link href={storyLink} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
@@ -52,12 +69,15 @@ const StoryCard = ({ story }) => {
         )}
         
         {/* 图片 */}
-        <img 
+        <Image 
           src={story.coverImageUrl} 
           alt={story.title[locale]} 
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+          fill
+          className="object-cover transition-all duration-500 group-hover:scale-110"
           onLoad={handleImageLoad}
           onError={handleImageError}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMkQjCbq6CvJaaH//2Q=="
         />
         
         {/* 遮罩层 */}

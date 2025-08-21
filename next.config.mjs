@@ -9,6 +9,11 @@ const nextConfig = {
   distDir: 'out',
   images: {
     unoptimized: true,
+    domains: ['localhost', 'geministorybook.online'],
+  },
+  env: {
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    GA_TRACKING_ID: process.env.GA_TRACKING_ID || 'G-49WRVFC2QQ',
   },
   // 移除 exportPathMap，让 Next.js 自动处理
 };

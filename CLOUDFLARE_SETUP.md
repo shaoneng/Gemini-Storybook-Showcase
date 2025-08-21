@@ -42,6 +42,7 @@ npm run deploy
    - **Zone:Page Rules:Edit**
    - **Account:Cloudflare Pages:Edit**
 5. 复制生成的令牌
+b6dwOVpqmjTk62JB95T0UPsYnXndOhtSBAf6ct_l
 
 ### 2. 配置 GitHub Secrets
 

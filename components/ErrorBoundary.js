@@ -14,8 +14,14 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     console.error('Error caught by boundary:', error, errorInfo);
     
-    // 可以发送错误报告到监控服务
-    // reportError(error, errorInfo);
+    // 发送错误报告到 Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'exception', {
+        description: error.toString(),
+        fatal: false,
+        errorInfo: JSON.stringify(errorInfo)
+      });
+    }
   }
 
   render() {

@@ -36,7 +36,26 @@ const StoryPage = ({ story }) => {
       <Head>
         <title>{`${story.title[locale]} - ${t('site_title')}`}</title>
         <meta name="description" content={`探索由 ${story.author[locale] || t('anonymous_author')} 创作的AI故事《${story.title[locale]}》及其背后的魔法提示词。`} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Book", "name": story.title[locale], "author": { "@type": "Person", "name": story.author[locale] || t('anonymous_author') }, "inLanguage": locale }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": story.title[locale],
+          "author": {
+            "@type": "Person",
+            "name": story.author[locale] || t('anonymous_author')
+          },
+          "datePublished": story.submissionDate,
+          "inLanguage": locale,
+          "keywords": "AI story, Gemini, creative writing",
+          "thumbnailUrl": `${typeof window !== 'undefined' ? window.location.origin : ''}${story.coverImageUrl}`
+        }) }} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={story.title[locale]} />
+        <meta property="og:description" content={story.prompt[locale]?.substring(0, 160) + '...'} />
+        <meta property="og:image" content={`${typeof window !== 'undefined' ? window.location.origin : ''}${story.coverImageUrl}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
       </Head>
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-8">
