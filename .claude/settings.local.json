@@ -3,7 +3,12 @@
     "allow": [
       "Bash(git clone https://github.com/wshobson/agents.git)",
       "Bash(npm run build)",
-      "Bash(npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom)"
+      "Bash(npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom)",
+      "Bash(git submodule status)",
+      "Bash(git config --file .gitmodules --list)",
+      "Bash(cat .git/config)",
+      "Bash(git submodule)",
+      "Bash(git add .)"
     ],
     "deny": [],
     "ask": []
