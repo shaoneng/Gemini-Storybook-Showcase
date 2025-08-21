@@ -4,7 +4,7 @@ import FallbackStoryCard from '../components/FallbackStoryCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
-import storiesData from '../data/stories.json';
+import { getSortedStories } from '../utils/storyData';
 
 const HomePage = ({ stories }) => {
   const { t } = useTranslation('common');
@@ -34,7 +34,7 @@ const HomePage = ({ stories }) => {
 
 // *** 关键修改：当 locale 不存在时，提供默认值 'zh' ***
 export async function getStaticProps() {
-  const sortedStories = storiesData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
+  const sortedStories = getSortedStories();
   
   return {
     props: {

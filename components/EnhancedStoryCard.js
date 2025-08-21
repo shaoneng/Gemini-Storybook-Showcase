@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useState, useEffect, useCallback } from 'react';
 
-const MobileOptimizedStoryCard = ({ story }) => {
+const EnhancedStoryCard = ({ story }) => {
   const router = useRouter();
   const { t } = useTranslation('common');
   const [imageError, setImageError] = useState(false);
@@ -32,20 +32,12 @@ const MobileOptimizedStoryCard = ({ story }) => {
   const imageUrl = isMobile ? `${baseImageUrl}?mobile=1` : baseImageUrl;
 
   const handleImageLoad = useCallback(() => {
-    console.log('✅ 图片加载成功:', imageUrl, '设备:', isMobile ? '移动端' : '桌面端');
     setImageLoaded(true);
-  }, [imageUrl, isMobile]);
+  }, []);
 
   const handleImageError = useCallback((e) => {
-    console.error('❌ 图片加载失败:', imageUrl, '错误:', e.target.error);
-    console.error('设备信息:', {
-      isMobile,
-      userAgent: navigator.userAgent,
-      screenWidth: window.screen.width,
-      windowWidth: window.innerWidth
-    });
     setImageError(true);
-  }, [imageUrl, isMobile]);
+  }, []);
 
   // 预加载图片
   useEffect(() => {
@@ -54,6 +46,61 @@ const MobileOptimizedStoryCard = ({ story }) => {
     img.onerror = handleImageError;
     img.src = imageUrl;
   }, [imageUrl, handleImageLoad, handleImageError]);
+
+  // 格式化标签显示
+  const renderTags = () => {
+    if (!story.tags || !Array.isArray(story.tags) || story.tags.length === 0) {
+      return null;
+    }
+    
+    return (
+      <div className="mt-2 flex flex-wrap gap-1">
+        {story.tags.slice(0, 3).map((tag, index) => (
+          <span 
+            key={index}
+            className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+          >
+            {tag}
+          </span>
+        ))}
+        {story.tags.length > 3 && (
+          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+            +{story.tags.length - 3}
+          </span>
+        )}
+      </div>
+    );
+  };
+
+  // 显示年龄组信息
+  const renderAgeGroup = () => {
+    if (!story.ageGroup) return null;
+    
+    const ageGroupLabels = {
+      'children': t('age_group_children') || '儿童',
+      'young-adult': t('age_group_young_adult') || '青少年',
+      'all-ages': t('age_group_all_ages') || '全年龄'
+    };
+    
+    return (
+      <div className="mt-1">
+        <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+          {ageGroupLabels[story.ageGroup] || story.ageGroup}
+        </span>
+      </div>
+    );
+  };
+
+  // 显示字数统计
+  const renderWordCount = () => {
+    if (!story.wordCount || !story.wordCount[locale]) return null;
+    
+    return (
+      <div className="mt-1 text-xs text-gray-500">
+        {t('word_count') || '字数'}: {story.wordCount[locale]}
+      </div>
+    );
+  };
 
   return (
     <Link href={storyLink} className="group block bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
@@ -131,6 +178,11 @@ const MobileOptimizedStoryCard = ({ story }) => {
           {t('story_author_prefix')} {story.author[locale] || t('anonymous_author')}
         </p>
         
+        {/* 新增的元数据信息 */}
+        {renderTags()}
+        {renderAgeGroup()}
+        {renderWordCount()}
+        
         {/* 调试信息 */}
         {process.env.NODE_ENV === 'development' && (
           <div className="mt-2 text-xs text-gray-400">
@@ -144,4 +196,4 @@ const MobileOptimizedStoryCard = ({ story }) => {
   );
 };
 
-export default MobileOptimizedStoryCard;
+export default EnhancedStoryCard;

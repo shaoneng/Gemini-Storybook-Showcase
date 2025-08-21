@@ -15,7 +15,7 @@ const SimpleStoryCard = ({ story }) => {
   // 构建正确的故事链接
   const storyLink = locale === 'en' ? `/en/story/${story.id}` : `/story/${story.id}`;
   
-  // 确保图片路径正确
+  // 确保图片路径正确 - 添加图片优化
   const imageUrl = story.coverImageUrl.startsWith('/') ? story.coverImageUrl : `/${story.coverImageUrl}`;
 
   const handleImageLoad = () => {
@@ -61,6 +61,8 @@ const SimpleStoryCard = ({ story }) => {
           onLoad={handleImageLoad}
           onError={handleImageError}
           loading="lazy"
+          decoding="async"
+          fetchpriority="low"
         />
         
       </div>

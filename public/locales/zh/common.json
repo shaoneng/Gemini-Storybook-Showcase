@@ -13,5 +13,9 @@
   "story_copy_button": "一键复制",
   "story_copy_success": "复制成功!",
   "story_open_button": "在新窗口中打开故事",
-  "anonymous_author": "匿名"
+  "anonymous_author": "匿名",
+  "age_group_children": "儿童",
+  "age_group_young_adult": "青少年",
+  "age_group_all_ages": "全年龄",
+  "word_count": "字数"
 }

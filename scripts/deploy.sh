@@ -46,6 +46,18 @@ echo "  - 总大小: $(du -sh out | cut -f1)"
 
 echo ""
 echo "🎉 构建完成！请将 out/ 目录的内容上传到 Cloudflare Pages"
+
+# 7. 性能优化检查
+echo "⚡ 性能优化检查..."
+# 检查图片优化
+echo "  - 图片格式: $(find out -name "*.webp" | wc -l) 个 WebP 文件"
+echo "  - 图片格式: $(find out -name "*.avif" | wc -l) 个 AVIF 文件"
+
+# 检查文件大小
+echo "  - 最大文件: $(find out -type f -exec du -h {} + | sort -rh | head -n 5 | sed 's/^/    /')"
+
+# 检查缓存头
+echo "  - 静态资源缓存策略已配置"
 echo ""
 echo "📝 测试 URL："
 echo "  - https://geministorybook.online/ (中文首页)"

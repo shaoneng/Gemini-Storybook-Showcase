@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import storiesData from '../data/stories.json';
+import { getStories } from '../utils/storyData';
 
 export default function MobileTest() {
   const [testResults, setTestResults] = useState({});
@@ -29,7 +29,7 @@ export default function MobileTest() {
         <p className="text-sm">用户代理: {typeof window !== 'undefined' ? window.navigator.userAgent : 'SSR'}</p>
       </div>
       
-      {storiesData.map((story) => (
+      {getStories().map((story) => (
         <div key={story.id} className="mb-6 p-4 border rounded">
           <h3 className="font-semibold mb-2">{story.title.zh}</h3>
           <p className="text-sm text-gray-600 mb-2">路径: {story.coverImageUrl}</p>

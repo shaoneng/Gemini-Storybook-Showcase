@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import storiesData from '../data/stories.json';
+import { getStories } from '../utils/storyData';
 
 export default function TestImages() {
   const [imageStates, setImageStates] = useState({});
@@ -19,7 +19,7 @@ export default function TestImages() {
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-8">图片加载测试</h1>
       
-      {storiesData.map((story) => (
+      {getStories().map((story) => (
         <div key={story.id} className="mb-8 p-4 border rounded">
           <h2 className="text-lg font-semibold mb-2">{story.title.zh}</h2>
           <p className="text-sm text-gray-600 mb-4">图片路径: {story.coverImageUrl}</p>

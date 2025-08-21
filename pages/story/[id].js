@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // *** 关键修改 1: 直接从本地导入故事数据 ***
-import storiesData from '../../data/stories.json';
+import { getStories } from '../../utils/storyData';
 
 const StoryPage = ({ story }) => {
   const { t } = useTranslation('common');
@@ -91,7 +91,8 @@ const StoryPage = ({ story }) => {
 
 // *** 关键修改 2: 静态导出时不依赖 locales 参数 ***
 export async function getStaticPaths() {
-  const paths = storiesData.map((story) => ({
+  const stories = getStories();
+  const paths = stories.map((story) => ({
     params: { id: story.id },
   }));
   return { paths, fallback: false };
@@ -100,7 +101,8 @@ export async function getStaticPaths() {
 // *** 关键修改 3: 使用导入的数据为每个页面获取 props ***
 
 export async function getStaticProps({ params }) {
-  const story = storiesData.find((s) => s.id === params.id);
+  const stories = getStories();
+  const story = stories.find((s) => s.id === params.id);
   return {
     props: {
       ...(await serverSideTranslations('zh', ['common'])),

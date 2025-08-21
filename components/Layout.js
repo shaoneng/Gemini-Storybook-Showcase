@@ -27,9 +27,9 @@ const Footer = () => {
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
       <Header />
-      <main className="flex-grow container mx-auto px-6 py-8">
+      <main className="flex-grow container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {children}
       </main>
       <Footer />

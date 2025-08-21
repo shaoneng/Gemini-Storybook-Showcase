@@ -10,6 +10,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
     domains: ['localhost', 'geministorybook.online'],
+    formats: ['image/webp', 'image/avif'],
   },
   env: {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',

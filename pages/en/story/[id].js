@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import storiesData from '../../../data/stories.json';
+import { getStories } from '../../../utils/storyData';
 
 const EnglishStoryPage = ({ story }) => {
   const { t } = useTranslation('common');
@@ -83,14 +83,16 @@ const EnglishStoryPage = ({ story }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = storiesData.map((story) => ({
+  const stories = getStories();
+  const paths = stories.map((story) => ({
     params: { id: story.id },
   }));
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const story = storiesData.find((s) => s.id === params.id);
+  const stories = getStories();
+  const story = stories.find((s) => s.id === params.id);
   if (!story) {
     return { notFound: true };
   }

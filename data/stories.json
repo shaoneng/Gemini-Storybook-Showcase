@@ -1,128 +1,174 @@
-[
-  {
-    "id": "the-hats-judgment",
-    "title": {
-      "en": "The Hat's Judgment",
-      "zh": "分院帽的裁决"
+{
+  "version": "2.0",
+  "lastUpdated": "2025-08-21T00:00:00Z",
+  "stories": [
+    {
+      "id": "the-hats-judgment",
+      "title": {
+        "en": "The Hat's Judgment",
+        "zh": "分院帽的裁决"
+      },
+      "author": {
+        "en": "The Hogwarts Chronicler",
+        "zh": "霍格沃茨记录者"
+      },
+      "coverImageUrl": "/covers/the-hats-judgment.png",
+      "shareUrl": "https://gemini.google.com/share/62db7cc51159",
+      "prompt": {
+        "en": "A story narrated by the Hogwarts Sorting Hat over a full school year. Drawing from a millennium of memories and the Founders' biases, the Hat recounts the difficult sorting of three students: a courageous Hufflepuff, a loyal Slytherin, and a calculating Ravenclaw. It then silently observes as their journeys throughout the year both defy and fulfill its ancient judgment.",
+        "zh": "故事以霍格沃茨分院帽的视角展开，跨越整个学年。这顶蕴含着千年记忆与创始人偏见的魔帽，讲述了为三位棘手的学生——一位勇敢的赫奇帕奇、一位忠诚的斯莱特林和一位精于算计的拉文克劳——进行分院的艰难过程。随后，它默默观察着这些学生一整年的经历，看他们的人生轨迹如何挑战并最终印证其古老的裁决。"
+      },
+      "submissionDate": "2025-09-01T09:00:00Z",
+      "tags": ["fantasy", "hogwarts", "sorting-hat"],
+      "ageGroup": "all-ages",
+      "wordCount": {
+        "en": 85,
+        "zh": 120
+      }
     },
-    "author": {
-      "en": "The Hogwarts Chronicler",
-      "zh": "霍格沃茨记录者"
+    {
+      "id": "the-knockturn-conspiracy",
+      "title": {
+        "en": "The Knockturn Conspiracy",
+        "zh": "翻倒巷的阴谋"
+      },
+      "author": {
+        "en": "Noir Storyteller",
+        "zh": "黑色小说家"
+      },
+      "coverImageUrl": "/covers/knockturn-conspiracy.png",
+      "shareUrl": "https://g.co/gemini/share/e651936f8b21",
+      "prompt": {
+        "en": "In 1950s magical London, a cynical, retired Auror-turned-private-investigator is hired by a mysterious femme fatale to find a stolen Dark Arts artifact that can supposedly make the dead speak. The case plunges him into a shadowy conspiracy weaving through Ministry politics and ancient Pure-blood families, all set in a classic film noir style.",
+        "zh": "在1950年代的魔法伦敦，一位因在对抗格林德沃的战争中受伤而退役、愤世嫉俗的前傲罗，如今在翻倒巷经营着一家私人侦探办公室。一位身着深色长袍的神秘蛇蝎美人前来，雇佣他寻找一件据称能“让死者开口”的被盗黑魔法物品。这起调查将他拖入了一个涉及魔法部政治和古老纯血家族的肮脏阴谋之中，整体呈现经典黑色电影的风格。"
+      },
+      "submissionDate": "2025-10-15T14:30:00Z",
+      "tags": ["mystery", "noir", "dark-arts"],
+      "ageGroup": "young-adult",
+      "wordCount": {
+        "en": 78,
+        "zh": 110
+      }
     },
-    "coverImageUrl": "/covers/the-hats-judgment.png",
-    "shareUrl": "https://gemini.google.com/share/62db7cc51159",
-    "prompt": {
-      "en": "A story narrated by the Hogwarts Sorting Hat over a full school year. Drawing from a millennium of memories and the Founders' biases, the Hat recounts the difficult sorting of three students: a courageous Hufflepuff, a loyal Slytherin, and a calculating Ravenclaw. It then silently observes as their journeys throughout the year both defy and fulfill its ancient judgment.",
-      "zh": "故事以霍格沃茨分院帽的视角展开，跨越整个学年。这顶蕴含着千年记忆与创始人偏见的魔帽，讲述了为三位棘手的学生——一位勇敢的赫奇帕奇、一位忠诚的斯莱特林和一位精于算计的拉文克劳——进行分院的艰难过程。随后，它默默观察着这些学生一整年的经历，看他们的人生轨迹如何挑战并最终印证其古老的裁决。"
+    {
+      "id": "the-great-obliviation",
+      "title": {
+        "en": "The Great Obliviation",
+        "zh": "大遗忘"
+      },
+      "author": {
+        "en": "The Memory Keeper",
+        "zh": "记忆守护者"
+      },
+      "coverImageUrl": "/covers/the-great-obliviation.png",
+      "shareUrl": "https://g.co/gemini/share/b428b610c66a",
+      "prompt": {
+        "en": "When a mass Obliviate charm goes haywire, every witch and wizard in Diagon Alley instantly forgets the concept of magic, though their powers remain. A single, unaffected apothecary's apprentice must navigate the ensuing chaos, secretly guiding powerful but clueless individuals while racing to find a way to reverse the catastrophic spell.",
+        "zh": "当一记群体遗忘咒发生严重错误，对角巷里的所有巫师和女巫瞬间忘记了“魔法”这一概念，但他们自身的力量却依然存在。一名幸免于难的药剂师学徒必须在随之而来的混乱中穿行，悄悄引导那些强大却茫然无措的人们，同时争分夺秒地寻找方法来逆转这个灾难性的咒语。"
+      },
+      "submissionDate": "2025-08-06T18:00:00Z",
+      "tags": ["fantasy", "comedy", "magic"],
+      "ageGroup": "all-ages",
+      "wordCount": {
+        "en": 72,
+        "zh": 95
+      }
     },
-    "submissionDate": "2025-09-01T09:00:00Z"
-  },
-  {
-    "id": "the-knockturn-conspiracy",
-    "title": {
-      "en": "The Knockturn Conspiracy",
-      "zh": "翻倒巷的阴谋"
+    {
+      "id": "a-shy-hedgehogs-first-day-at-school",
+      "title": {
+        "en": "The Shy Hedgehog's Sweet First Day",
+        "zh": "小刺猬的甜蜜开学日"
+      },
+      "author": {
+        "en": "AI Storyteller",
+        "zh": "AI小画家"
+      },
+      "coverImageUrl": "/covers/shy-hedgehog-school.png",
+      "shareUrl": "https://g.co/gemini/share/6c7fc108a011",
+      "prompt": {
+        "en": "Create a heartwarming and healing storybook for children aged 3-5 about a shy little hedgehog named Doudou, who is anxious about his first day at school. He's afraid his sharp quills, which stand up when he's nervous, will prevent him from making new friends. The story, set in a magical forest kindergarten, gently explores themes of overcoming social anxiety, the beauty of being different, and creative problem-solving. Show how his new friends, a cheerful bear and a timid squirrel, help him by cleverly putting soft marshmallows on his spikes, turning his biggest fear into a sweet and unique trait. The style should be warm, comforting, and humorous, designed to ease children's back-to-school fears.",
+        "zh": "为3-5岁儿童创作一本温暖治愈的图画书，主题是关于一只名叫豆豆的害羞小刺猬，对他开学第一天感到非常焦虑。他害怕自己紧张时会竖起的尖刺让他交不到新朋友。故事发生在一个奇妙的森林幼儿园里，温和地探讨了如何克服社交恐惧、接纳自己的与众不同，以及创造性地解决问题。情节围绕着活泼的小熊和胆小的松鼠这两个新朋友，如何巧妙地将软绵绵的棉花糖插在豆豆的尖刺上，把他最大的恐惧变成了一个甜蜜又独特的优点。整体风格应温暖、治愈且带有一丝幽默感，旨在有效缓解孩子们的开学焦虑情绪。"
+      },
+      "submissionDate": "2025-08-06T10:00:00Z",
+      "tags": ["children", "educational", "animals"],
+      "ageGroup": "children",
+      "wordCount": {
+        "en": 125,
+        "zh": 145
+      }
     },
-    "author": {
-      "en": "Noir Storyteller",
-      "zh": "黑色小说家"
+    {
+      "id": "summer-beach-secret-treasure",
+      "title": {
+        "en": "The Secret Treasure of Summer Beach",
+        "zh": "夏日海滩的秘密宝藏"
+      },
+      "author": {
+        "en": "AI Storyteller",
+        "zh": "AI小画家"
+      },
+      "coverImageUrl": "/covers/summer-beach-treasure.png",
+      "shareUrl": "https://g.co/gemini/share/49d5558d0c1c",
+      "prompt": {
+        "en": "Create a storybook for 3-6 year olds about two sisters, a cheerful 6-year-old named Hikari and her shy 4-year-old sister Shio. On their first trip to the beach, Shio loses her precious shell necklace. To comfort her sister, Hikari leads a search and they meet helpful animal friends: a knowledgeable Mr. Hermit Crab, playful dolphin messengers, and a kind Grandpa Anglerfish who lights up the deep. With their help, they find the necklace. The style should be a fresh and bright Japanese anime aesthetic, with a warm, healing, and fantastical atmosphere. The story should emphasize themes of sisterly love, courage, optimism, and the harmony between humans and nature.",
+        "zh": "为3-6岁儿童创作一本绘本故事，主角是活泼的6岁姐姐小光和害羞的4岁妹妹小汐。在一次夏日海滩之旅中，小汐不慎丢失了她珍爱的贝壳项链。为了安慰妹妹，勇敢的小光承诺一定帮忙找回。她们在寻找过程中，遇到了博学的寄居蟹先生、友善的海豚母子和慈祥的灯笼鱼爷爷。在这些新朋友的帮助下，她们最终找回了项链。故事风格需采用日漫清新风格，色彩明亮治愈，充满温暖的幻想色彩，旨在传达姐妹情深、勇敢乐观以及人与自然和谐共处的主题。"
+      },
+      "submissionDate": "2025-08-08T11:43:00Z",
+      "tags": ["children", "adventure", "siblings"],
+      "ageGroup": "children",
+      "wordCount": {
+        "en": 115,
+        "zh": 135
+      }
     },
-    "coverImageUrl": "/covers/knockturn-conspiracy.png",
-    "shareUrl": "https://g.co/gemini/share/e651936f8b21",
-    "prompt": {
-      "en": "In 1950s magical London, a cynical, retired Auror-turned-private-investigator is hired by a mysterious femme fatale to find a stolen Dark Arts artifact that can supposedly make the dead speak. The case plunges him into a shadowy conspiracy weaving through Ministry politics and ancient Pure-blood families, all set in a classic film noir style.",
-      "zh": "在1950年代的魔法伦敦，一位因在对抗格林德沃的战争中受伤而退役、愤世嫉俗的前傲罗，如今在翻倒巷经营着一家私人侦探办公室。一位身着深色长袍的神秘蛇蝎美人前来，雇佣他寻找一件据称能“让死者开口”的被盗黑魔法物品。这起调查将他拖入了一个涉及魔法部政治和古老纯血家族的肮脏阴谋之中，整体呈现经典黑色电影的风格。"
+    {
+      "id": "moon-rabbits-earth-adventure",
+      "title": {
+        "en": "The Moon Rabbit's Earth Adventure",
+        "zh": "月亮兔子的地球探险"
+      },
+      "author": {
+        "en": "AI Storyteller",
+        "zh": "AI小画家"
+      },
+      "coverImageUrl": "/covers/moon-rabbit-adventure.png",
+      "shareUrl": "https://g.co/gemini/share/eb109edeaa3a",
+      "prompt": {
+        "en": "Create a storybook for children about a timid moon rabbit named Tuanzi. Curious about Earth but afraid of the unknown, he bravely journeys there with a lost star. He meets a kind girl named Guang and learns that new experiences aren't scary, but wonderful. This heartwarming story, in a Japanese anime style, teaches about courage, overcoming fear, and the joy of friendship.",
+        "zh": "为儿童创作一本关于胆小月兔“团子”的图画书。他对地球充满好奇却又害怕未知，在一个小星星的陪伴下，他勇敢地前往地球，遇见了善良的女孩“小光”，并最终明白新体验并不可怕，反而充满惊喜。这个温暖人心的故事采用日漫风格，旨在教会孩子们关于勇气、克服恐惧和友谊的快乐。"
+      },
+      "submissionDate": "2025-08-08T22:30:00Z",
+      "tags": ["children", "friendship", "adventure"],
+      "ageGroup": "children",
+      "wordCount": {
+        "en": 65,
+        "zh": 85
+      }
     },
-    "submissionDate": "2025-10-15T14:30:00Z"
-  },
-  {
-    "id": "the-great-obliviation",
-    "title": {
-      "en": "The Great Obliviation",
-      "zh": "大遗忘"
-    },
-    "author": {
-      "en": "The Memory Keeper",
-      "zh": "记忆守护者"
-    },
-    "coverImageUrl": "/covers/the-great-obliviation.png",
-    "shareUrl": "https://g.co/gemini/share/b428b610c66a",
-    "prompt": {
-      "en": "When a mass Obliviate charm goes haywire, every witch and wizard in Diagon Alley instantly forgets the concept of magic, though their powers remain. A single, unaffected apothecary's apprentice must navigate the ensuing chaos, secretly guiding powerful but clueless individuals while racing to find a way to reverse the catastrophic spell.",
-      "zh": "当一记群体遗忘咒发生严重错误，对角巷里的所有巫师和女巫瞬间忘记了“魔法”这一概念，但他们自身的力量却依然存在。一名幸免于难的药剂师学徒必须在随之而来的混乱中穿行，悄悄引导那些强大却茫然无措的人们，同时争分夺秒地寻找方法来逆转这个灾难性的咒语。"
-    },
-    "submissionDate": "2025-08-06T18:00:00Z"
-  },
-  {
-    "id": "a-shy-hedgehogs-first-day-at-school",
-    "title": {
-      "en": "The Shy Hedgehog's Sweet First Day",
-      "zh": "小刺猬的甜蜜开学日"
-    },
-    "author": {
-      "en": "AI Storyteller",
-      "zh": "AI小画家"
-    },
-    "coverImageUrl": "/covers/shy-hedgehog-school.png",
-    "shareUrl": "https://g.co/gemini/share/6c7fc108a011",
-    "prompt": {
-      "en": "Create a heartwarming and healing storybook for children aged 3-5 about a shy little hedgehog named Doudou, who is anxious about his first day at school. He's afraid his sharp quills, which stand up when he's nervous, will prevent him from making new friends. The story, set in a magical forest kindergarten, gently explores themes of overcoming social anxiety, the beauty of being different, and creative problem-solving. Show how his new friends, a cheerful bear and a timid squirrel, help him by cleverly putting soft marshmallows on his spikes, turning his biggest fear into a sweet and unique trait. The style should be warm, comforting, and humorous, designed to ease children's back-to-school fears.",
-      "zh": "为3-5岁儿童创作一本温暖治愈的图画书，主题是关于一只名叫豆豆的害羞小刺猬，对他开学第一天感到非常焦虑。他害怕自己紧张时会竖起的尖刺让他交不到新朋友。故事发生在一个奇妙的森林幼儿园里，温和地探讨了如何克服社交恐惧、接纳自己的与众不同，以及创造性地解决问题。情节围绕着活泼的小熊和胆小的松鼠这两个新朋友，如何巧妙地将软绵绵的棉花糖插在豆豆的尖刺上，把他最大的恐惧变成了一个甜蜜又独特的优点。整体风格应温暖、治愈且带有一丝幽默感，旨在有效缓解孩子们的开学焦虑情绪。"
-    },
-    "submissionDate": "2025-08-06T10:00:00Z"
-  },
-  {
-    "id": "summer-beach-secret-treasure",
-    "title": {
-      "en": "The Secret Treasure of Summer Beach",
-      "zh": "夏日海滩的秘密宝藏"
-    },
-    "author": {
-      "en": "AI Storyteller",
-      "zh": "AI小画家"
-    },
-    "coverImageUrl": "/covers/summer-beach-treasure.png",
-    "shareUrl": "https://g.co/gemini/share/49d5558d0c1c",
-    "prompt": {
-      "en": "Create a storybook for 3-6 year olds about two sisters, a cheerful 6-year-old named Hikari and her shy 4-year-old sister Shio. On their first trip to the beach, Shio loses her precious shell necklace. To comfort her sister, Hikari leads a search and they meet helpful animal friends: a knowledgeable Mr. Hermit Crab, playful dolphin messengers, and a kind Grandpa Anglerfish who lights up the deep. With their help, they find the necklace. The style should be a fresh and bright Japanese anime aesthetic, with a warm, healing, and fantastical atmosphere. The story should emphasize themes of sisterly love, courage, optimism, and the harmony between humans and nature.",
-      "zh": "为3-6岁儿童创作一本绘本故事，主角是活泼的6岁姐姐小光和害羞的4岁妹妹小汐。在一次夏日海滩之旅中，小汐不慎丢失了她珍爱的贝壳项链。为了安慰妹妹，勇敢的小光承诺一定帮忙找回。她们在寻找过程中，遇到了博学的寄居蟹先生、友善的海豚母子和慈祥的灯笼鱼爷爷。在这些新朋友的帮助下，她们最终找回了项链。故事风格需采用日漫清新风格，色彩明亮治愈，充满温暖的幻想色彩，旨在传达姐妹情深、勇敢乐观以及人与自然和谐共处的主题。"
-    },
-    "submissionDate": "2025-08-08T11:43:00Z"
-  },
-  {
-    "id": "moon-rabbits-earth-adventure",
-    "title": {
-      "en": "The Moon Rabbit's Earth Adventure",
-      "zh": "月亮兔子的地球探险"
-    },
-    "author": {
-      "en": "AI Storyteller",
-      "zh": "AI小画家"
-    },
-    "coverImageUrl": "/covers/moon-rabbit-adventure.png",
-    "shareUrl": "https://g.co/gemini/share/eb109edeaa3a",
-    "prompt": {
-      "en": "Create a storybook for children about a timid moon rabbit named Tuanzi. Curious about Earth but afraid of the unknown, he bravely journeys there with a lost star. He meets a kind girl named Guang and learns that new experiences aren't scary, but wonderful. This heartwarming story, in a Japanese anime style, teaches about courage, overcoming fear, and the joy of friendship.",
-      "zh": "为儿童创作一本关于胆小月兔“团子”的图画书。他对地球充满好奇却又害怕未知，在一个小星星的陪伴下，他勇敢地前往地球，遇见了善良的女孩“小光”，并最终明白新体验并不可怕，反而充满惊喜。这个温暖人心的故事采用日漫风格，旨在教会孩子们关于勇气、克服恐惧和友谊的快乐。"
-    },
-    "submissionDate": "2025-08-08T22:30:00Z"
-  },
-  {
-    "id": "sunrise-on-whispering-wind-mountain",
-    "title": {
-      "en": "Sunrise on Whispering Wind Mountain",
-      "zh": "风语山的日出"
-    },
-    "author": {
-      "en": "AI Storyteller",
-      "zh": "AI小画家"
-    },
-    "coverImageUrl": "/covers/sunrise-on-whispering-wind-mountain.png",
-    "shareUrl": "https://g.co/gemini/share/7efcfc91f6e1",
-    "prompt": {
-      "en": "Create a storybook for 6-8 year olds about an energetic little boy named Yuki, with curious eyes and an anime-style haircut. He embarks on a solo journey to climb the mysterious 'Whispering Wind Mountain' to see the legendary 'Wishing Sunrise,' which is said to grant any wish. The path is difficult, and he gets lost in a thick fog. Just as he's about to give up, he meets a wise, talking old mountain goat. The goat teaches him to find the way by listening to the wind, observing moss on rocks, and following the brave little mountain flowers. Using this wisdom and his own courage, Yuki successfully reaches the summit before dawn. Awed by the magnificent sunrise, he forgets all about making a wish, realizing that the journey, perseverance, and the beauty he witnessed were the real rewards. The style should be a beautiful and detailed anime aesthetic, with vibrant, hopeful, and fantastical colors. The story should convey that the journey is more important than the destination, emphasizing the values of courage, perseverance, and learning from nature. Include quotes like: 'The wind whispers secrets to those who listen,' 'Every flower blooming on the cliff is a little guide of courage,' and 'Yuki reached the top, his heart beating like a drum, not with fear, but with joy.'",
-      "zh": "为6-8岁的孩子创作一本图画书，故事关于一个名叫“小悠”的活泼小男孩，他有好奇的大眼睛和标志性的日漫发型。小悠听说“风语山”山顶的“许愿日出”能实现愿望，便决定独自登山。路途比想象中更艰难，他在浓雾中迷了路，感到害怕。关键时刻，他遇到了一只智慧的、会说话的老山羚羊。山羚羊没有直接指路，而是教他如何“倾听风的声音”、“观察岩石上的苔藓”和“跟随山地小花”来找到最安全的路。凭借着这份智慧和自身的勇气，小悠终于在日出前成功登顶。他被灿烂的日出美景震撼，完全忘记了许愿，并领悟到过程比结果更重要，冒险中的坚持与智慧才是最大的收获。风格要求为唯美细腻的日漫风格，画面充满希望与奇幻感。故事需强调勇气、坚持以及向大自然学习的价值。"
-    },
-    "submissionDate": "2025-08-09T12:00:00Z"
-  }
-]
+    {
+      "id": "sunrise-on-whispering-wind-mountain",
+      "title": {
+        "en": "Sunrise on Whispering Wind Mountain",
+        "zh": "风语山的日出"
+      },
+      "author": {
+        "en": "AI Storyteller",
+        "zh": "AI小画家"
+      },
+      "coverImageUrl": "/covers/sunrise-on-whispering-wind-mountain.png",
+      "shareUrl": "https://g.co/gemini/share/7efcfc91f6e1",
+      "prompt": {
+        "en": "Create a storybook for 6-8 year olds about an energetic little boy named Yuki, with curious eyes and an anime-style haircut. He embarks on a solo journey to climb the mysterious 'Whispering Wind Mountain' to see the legendary 'Wishing Sunrise,' which is said to grant any wish. The path is difficult, and he gets lost in a thick fog. Just as he's about to give up, he meets a wise, talking old mountain goat. The goat teaches him to find the way by listening to the wind, observing moss on rocks, and following the brave little mountain flowers. Using this wisdom and his own courage, Yuki successfully reaches the summit before dawn. Awed by the magnificent sunrise, he forgets all about making a wish, realizing that the journey, perseverance, and the beauty he witnessed were the real rewards. The style should be a beautiful and detailed anime aesthetic, with vibrant, hopeful, and fantastical colors. The story should convey that the journey is more important than the destination, emphasizing the values of courage, perseverance, and learning from nature. Include quotes like: 'The wind whispers secrets to those who listen,' 'Every flower blooming on the cliff is a little guide of courage,' and 'Yuki reached the top, his heart beating like a drum, not with fear, but with joy.'",
+        "zh": "为6-8岁的孩子创作一本图画书，故事关于一个名叫“小悠”的活泼小男孩，他有好奇的大眼睛和标志性的日漫发型。小悠听说“风语山”山顶的“许愿日出”能实现愿望，便决定独自登山。路途比想象中更艰难，他在浓雾中迷了路，感到害怕。关键时刻，他遇到了一只智慧的、会说话的老山羚羊。山羚羊没有直接指路，而是教他如何“倾听风的声音”、“观察岩石上的苔藓”和“跟随山地小花”来找到最安全的路。凭借着这份智慧和自身的勇气，小悠终于在日出前成功登顶。他被灿烂的日出美景震撼，完全忘记了许愿，并领悟到过程比结果更重要，冒险中的坚持与智慧才是最大的收获。风格要求为唯美细腻的日漫风格，画面充满希望与奇幻感。故事需强调勇气、坚持以及向大自然学习的价值。"
+      },
+      "submissionDate": "2025-08-09T12:00:00Z",
+      "tags": ["adventure", "inspirational", "nature"],
+      "ageGroup": "children",
+      "wordCount": {
+        "en": 195,
+        "zh": 220
+      }
+    }
+  ]
+}

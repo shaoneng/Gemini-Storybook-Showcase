@@ -31,6 +31,23 @@ const SEOHead = ({ title, description, ogImage, children }) => {
       <link rel="alternate" hrefLang="en" href={`${baseUrl}/en${router.asPath === '/' ? '' : router.asPath}`} />
       <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${router.asPath.replace('/en', '') || '/'}`} />
       
+      {/* Schema.org structured data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Gemini Storybook Showcase",
+          "url": "https://geministorybook.online",
+          "description": "Explore amazing AI stories created with Google Gemini Storybook, discover the magic prompts behind them, and share your own creative works.",
+          "inLanguage": ["zh-CN", "en-US"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://geministorybook.online/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
+      
       {children}
     </Head>
   );

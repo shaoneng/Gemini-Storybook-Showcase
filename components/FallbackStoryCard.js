@@ -71,6 +71,8 @@ const FallbackStoryCard = ({ story }) => {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               onError={handleImageError}
               loading="lazy"
+              decoding="async"
+              fetchpriority="low"
             />
             
             {/* 加载失败时的占位符 */}

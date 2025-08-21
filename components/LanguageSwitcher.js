@@ -54,10 +54,32 @@ const LanguageSwitcher = () => {
     }
   };
 
-  // 处理语言切换
-  const handleLanguageChange = (targetLocale) => {
+  // 处理语言切换 - 添加平滑过渡和状态反馈
+  const handleLanguageChange = (targetLocale, event) => {
     const targetUrl = getLanguageLink(targetLocale);
-    router.push(targetUrl);
+    
+    // 添加平滑过渡效果
+    document.body.style.opacity = '0.8';
+    
+    // 添加加载状态反馈
+    const button = event?.currentTarget;
+    if (button) {
+      const originalText = button.textContent;
+      button.textContent = targetLocale === 'zh' ? '切换中...' : 'Switching...';
+      button.disabled = true;
+      
+      setTimeout(() => {
+        if (button) {
+          button.textContent = originalText;
+          button.disabled = false;
+        }
+      }, 1000);
+    }
+    
+    // 延迟导航以允许动画完成
+    setTimeout(() => {
+      router.push(targetUrl);
+    }, 150);
   };
 
   return (
@@ -76,14 +98,19 @@ const LanguageSwitcher = () => {
                 <Menu.Item key={locale}>
                   {({ active }) => (
                     <button
-                      onClick={() => handleLanguageChange(locale)}
+                      onClick={(e) => handleLanguageChange(locale, e)}
                       className={`
                         ${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}
                         ${locale === activeLocale ? 'font-bold' : 'font-normal'}
-                        block px-4 py-2 text-sm w-full text-left
+                        block px-4 py-2 text-sm w-full text-left transition-colors duration-200
+                        hover:bg-blue-50 hover:text-blue-700
                       `}
+                      disabled={locale === activeLocale}
                     >
                       {locale === 'zh' ? '中文' : 'English'}
+                      {locale === activeLocale && (
+                        <span className="ml-2 text-xs text-green-600">✓</span>
+                      )}
                     </button>
                   )}
                 </Menu.Item>

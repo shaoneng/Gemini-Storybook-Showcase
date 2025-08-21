@@ -13,5 +13,9 @@
   "story_copy_button": "Copy Prompt",
   "story_copy_success": "Copied!",
   "story_open_button": "Open Story in New Tab",
-  "anonymous_author": "Anonymous"
+  "anonymous_author": "Anonymous",
+  "age_group_children": "Children",
+  "age_group_young_adult": "Young Adult",
+  "age_group_all_ages": "All Ages",
+  "word_count": "Words"
 }
