@@ -1,0 +1,5 @@
+# This file is intentionally empty.
+# Rationale: The repository previously referenced an `agents` submodule.
+# Cloudflare's build environment runs `git submodule update --init --recursive`
+# by default and fails if `.gitmodules` has an incomplete entry.
+# Leaving this file empty explicitly indicates there are no submodules.
